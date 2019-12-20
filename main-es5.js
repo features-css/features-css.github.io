@@ -1,0 +1,1861 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+
+/***/ "./$$_lazy_route_resource lazy recursive":
+/*!******************************************************!*\
+  !*** ./$$_lazy_route_resource lazy namespace object ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./user/user.module": "./src/app/user/user.module.ts"
+};
+
+function webpackAsyncContext(req) {
+	return Promise.resolve().then(function() {
+		if(!__webpack_require__.o(map, req)) {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		}
+
+		var id = map[req];
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
+/*!**************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!--\n  \"Help me\" modal\n-->\n\n<app-modal\n  #pleaseHelpMeModal\n  [title]=\"[\n    'Please help me and my animals.',\n    'We have not money to eat...'\n  ]\"\n>\n  <app-please-help-me></app-please-help-me>\n</app-modal>\n\n<!--\n  Page\n-->\n\n<nav id=\"id-top-navbar\" class=\"navbar navbar-expand navbar-dark bg-primary\">\n  <div class=\"container\">\n    <div class=\"d-flex flex-row\">\n\n      <div *ngFor=\"let linkGroup of navbarLinkGroups\">\n        <app-navbar-link-group [linkGroup]=\"linkGroup\"></app-navbar-link-group>\n      </div>\n\n    </div>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n\n<nav id=\"id-bottom-navbar\" class=\"navbar fixed-bottom navbar-light\" style=\"background-color: #e3f2fd;\">\n  <a class=\"navbar-brand mx-2\">Please help me and my animals. <br class=\"d-block d-sm-none\">We have not money to eat...</a>\n  <form class=\"form-inline mx-2\">\n    <button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onClickDonateMeAndMyAnimals($event)\">\n      Please donate us...\n    </button>\n  </form>\n</nav>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/code-snippet/code-snippet.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/code-snippet/code-snippet.component.html ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-template [ngIf]=\"snippet\">\n  <ngx-prism [language]=\"snippet.language\" [code]=\"snippet.code\"></ngx-prism>\n</ng-template>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/modal/modal.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/modal/modal.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-template #content let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">\n      <span [innerHTML]=\"titleAsHtml\"></span>\n    </h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"mr-auto btn btn-outline-primary in-please-donate-us-btn\" disabled>\n      Please donate us...\n    </button>\n    <button type=\"button\" class=\"btn btn-light\" (click)=\"modal.close('Close click')\">\n      Close\n    </button>\n  </div>\n</ng-template>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/navbar-link-group/navbar-link-group.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/navbar-link-group/navbar-link-group.component.html ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-template [ngIf]=\"linkGroup\">\n  <div class=\"in-root\">\n\n    <a class=\"navbar-brand\" href=\"#\">\n      <app-resp-text [text]=\"linkGroup.title\"></app-resp-text>\n    </a>\n\n    <div class=\"navbar-collapse collapse\">\n      <ul class=\"navbar-nav justify-content-center align-items-center\">\n        <li *ngFor=\"let item of linkGroup.links\" class=\"nav-item\" [routerLink]=\"item.url\" routerLinkActive=\"active\"\n          [routerLinkActiveOptions]=\"item.routerLinkActiveOptions || {}\">\n\n          <ng-template [ngIf]=\"!item.external\" [ngIfElse]=\"externalLink\">\n            <a class=\"nav-link\" [routerLink]=\"item.url\">\n              <app-resp-text [text]=\"item.text\"></app-resp-text>\n              <div class=\"in-link-active-marker\"></div>\n            </a>\n          </ng-template>\n\n          <ng-template #externalLink>\n            <a class=\"nav-link\" [href]=\"item.url\" target=\"_blank\">\n              <app-resp-text [text]=\"item.text\"></app-resp-text>\n              <div class=\"in-link-active-marker\"></div>\n            </a>\n          </ng-template>\n\n        </li>\n      </ul>\n    </div>\n\n  </div>\n</ng-template>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/page-section-title/page-section-title.component.html":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/page-section-title/page-section-title.component.html ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"gl-page-section-title\"><ng-content></ng-content></h2>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.html":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.html ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4 class=\"gl-page-sub-section-title\"><ng-content></ng-content></h4>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/page-title/page-title.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/page-title/page-title.component.html ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 class=\"gl-page-title\"><ng-content></ng-content></h1>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/resp-text-item/resp-text-item.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/resp-text-item/resp-text-item.component.html ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-template [ngIf]=\"checker.isString(textItem)\">\n  {{ textItem }}\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isItem(textItem)\">\n  <ng-template [ngIf]=\"textItem.icon\">\n    <i [class]=\"iconClass\" [ngStyle]=\"{ 'font-size.em': iconScale }\"></i>\n  </ng-template>\n  <ng-template [ngIf]=\"textItem.text\">\n    {{textItem.text}}\n  </ng-template>\n</ng-template>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/shared/components/resp-text/resp-text.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/shared/components/resp-text/resp-text.component.html ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-template [ngIf]=\"checker.isString(text)\">\n  {{ text }}\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isItem(text)\">\n  <app-resp-text-item [textItem]=\"text\"></app-resp-text-item>\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isText(text)\">\n  <div class=\"d-none d-sm-block\">\n    <app-resp-text-item [textItem]=\"text.text\"></app-resp-text-item>\n  </div>\n  <div class=\"d-block d-sm-none\">\n    <app-resp-text-item [textItem]=\"text.smallText\"></app-resp-text-item>\n  </div>\n</ng-template>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/user/components/please-help-me/please-help-me.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/user/components/please-help-me/please-help-me.component.html ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  Hello, I’ve been a volunteer zoodefender for almost 2 years and I live in Russia. I am writing in despair asking for help.\n</p>\n\n<p>\n  I came up with the CSS \"Features CSS\" preprocessor just to get the attention of programmers. Because I really need help.\n</p>\n\n<p>\n  I am a livestock volunteer and take homeless animals from the street, because it is very difficult for homeless animals to live on the street without a home. In Ulan-Ude, Russia, most of the homeless animals on the streets die. They die due to trapping animals, or without food from starvation (only a small part of homeless animals can learn to find food and survive), or die in winter from the cold (if they do not find time to eat food to warm themselves). I take animals from the street to save them from such a terrible fate. I also feed homeless animals in the streets.\n</p>\n\n<p>\n  In recent months, I picked up a lot of animals from the street, did not calculate my money needed for food for my selected animals and animals, which I feed on the streets, and got into debt. Now I have 74 animals picked from the street, and still homeless animals in the streets that I feed. In a few days I’ll run out of money to feed all of my animals - and those picked up from the street, and homeless animals. In addition, I do not have money to repay the debts that I took, because I did not have enough money for animals. This is a mini loan and a loan from a private lender. And I am accumulating interest for the delay in these debts, and the amount of debts is growing rapidly. My animals and I will soon be left without food. I beg you to help me with my animals. Without you, we won’t get out.\n</p>\n\n<p>\n  I live in Russia in the city of Ulan-Ude and work as a programmer. I spend only a minimum of money on myself. And I spend all the rest of the money on feeding my animals picked up from the street. As well as feeding homeless animals living on the streets, for which I have no place (these animals are many). I want to find work abroad and build an animal shelter and pick up these animals from the street, for which I still have no place, and also pick up a lot of other animals from the street.\n</p>\n\n<p>\n  Now I have 39 teenage puppies whom I took from the street as young puppies, and now they are already the size of adult dogs. I also have 3 dogs, which I took from the street as adults. I also have 27 teenage kittens, which I also took from the street with still small kittens, and now they have also grown in size as adult cats. And I also have 5 cats, which I took from the street as adults.\n</p>\n\n<p>\n  In the past few months, I have taken a lot of animals from the street. I took them from the street because I could not pass by. In Ulan-Ude, most of the homeless animals on the streets die. They die either from capturing animals, or from hunger, or from cold in winter, because they could not find food and warm themselves. Homeless animals are very ill on the street, most of them die, and those who survived live a painful life on the street. Therefore, I could not pass by, and in recent months I took a lot of animals from the street, more than I can afford. I got more animals and I did not have enough money to feed them. Therefore, I took several mini-loans so that I had enough money to eat my animals.\n</p>\n\n<p>\n  And 2 months ago, some small puppies from recently selected puppies that were sitting in the same enclosure fell ill with enteritis (enteritis is a deadly disease in puppies, this disease has a very high mortality rate). I took the puppies to a veterinary clinic for treatment in a hospital, and in order to pay for treatment, I borrowed 60 thousand rubles (this is $ 937.75 at the dollar rate on Google) from a private lender at high interest rates, because mini-loans I haven’t been given out to the moment, since my previous mini-loans have not yet been closed. I had to return 2 times more, and in case of delay in repayment of the debt, a large interest on the debt was accrued. I gave part of the borrowed money for treatment of puppies to the clinic, and part of it was spent on food for my other animals. Because by that time I already had a lot of money for food and my chosen animals, and homeless animals on the streets of which I care. I needed to pay high interest for mini-loans, in Russia in Russia interest for mini-loans is 1-1.5 percent per day. Therefore, by that time, my animals didn’t just have enough money for food, but not enough.\n</p>\n\n<p>\n  In the veterinary clinic, most of the puppies were cured, but some died (unti-smile). When I took the puppies from the clinic back to my home, after some time the same puppies from the same enclosure again got enteritis. But I already didn’t have the money to give the puppies for treatment to the clinic in the hospital. I treated them at home myself, put antibiotics and droppers, but all the puppies died. There were 5 puppies who died.\n</p>\n\n<p>\n  At the same time, I was looking for work abroad (abroad, the programmer’s salary is much higher than in Russia), so that I would have enough money to feed and help animals; and to close their debts, which are growing rapidly every day due to interest and delay.\n</p>\n\n<p>\n  I also saw homeless puppies and kittens in different places on the street. And really wanted to pick them up from the street. I wrote down, so as not to forget, the places where I saw these puppies and kittens, to pick them up from the street when I find work abroad. In total, I recorded about 20 puppies and kittens. But I still could not find work abroad. A lot of time has passed, probably most of these puppies and kittens have already died or will die soon.\n</p>\n\n<p style=\"color: darkorange;\">\n  <b>\n    In a few days my money will run out with my animals.\n  </b>\n</p>\n<ul>\n  <li>\n    My animals and I need $ 1875.50 for food for the next month. These are my selected animals and the homeless animals that I feed on the streets. I have already asked for a salary ahead of time at work and have spent all of it. On December 3 we will have a salary, but I will not receive it, because I already received it ahead of time and spent all of it. And my animals and I will have nothing to eat in a few days.\n  </li>\n  <li>\n    I need to repay the debt that I took from a private lender. I repaid part of this debt, but could not repay all the debt on time. And because of the delay, the debt has grown and is growing every day. Now I owe 142 thousand rubles for this debt (this is equal to 2219.34 dollars at the dollar rate in Google). And because of the delay, the debt is growing rapidly every day.\n  </li>\n  <li>\n    And I need to repay a debt for several mini-loans - only about 97 thousand rubles (this is equal to $ 1,516.03 at the dollar rate on Google). For these mini-loans, I also have delays and the amount of debt is growing.\n  </li>\n</ul>\n\n<div style=\"border: 1px solid #000; padding: 10px;;\">\n  <p>\n    <b style=\"font-size: 1.2em; color: red;\">\n      Please help us! We won’t get out without you! We need:\n    </b>\n  </p>\n\n  <ol>\n    <li>\n      <b>$ 1875.50</b>\n      <br>\n      Me and my animals for food next month. In a few days we will run out of money!\n    </li>\n    <li>\n      <b>$ 3,735.37</b>\n      <br>\n      To repay my debts, which are now growing every day due to delay.\n    </li>\n  </ol>\n\n  <p>\n    Without your help, my animals and I will have nothing to eat! And the debts will grow to such an amount that I can never close them.\n  </p>\n\n  <p>\n    If you can help us and transfer money to us, then please use \"Western Union\". \"Western Union\" takes interest on the transfer, but transfers to Russia on a plastic card from other countries are prohibited.\n  </p>\n\n  <p>\n    <b>\n      How to transfer money to Russia through \"Western Union\":\n    </b>\n  </p>\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <p>\n      To find how to transfer money through \"Western Union\" to Russia, try to google on these phrases:\n    </p>\n    <ul>\n      <li>\n        western union send money to russia from europe\n      </li>\n      <li>\n        western union send money to russia from usa\n      </li>\n      <li>\n        <i>\n          if you live in a different country, please indicate the same phrase on Google, but with your country\n        </i>\n      </li>\n    </ul>\n    <p>\n      - for me, these phrases did not produce useful results on Google, but maybe this is because I am in Russia, and Google adjusts the search results for different users and countries.\n    </p>\n\n    <p>\n      Or go to the Western Union website and find directly on the website how to transfer money to Russia.\n    </p>\n\n    <p>\n      I know for sure that money transfers through \"Western Union\" to Russia from other countries work. Because at the end of the summer, a friend of mine transferred money to me from USA through Western Union.\n    </p>\n\n    <p>\n      <b>\n        When transferring via \"Western Union\", indicate the following details of the recipient (this is my data):\n      </b>\n    </p>\n\n    <table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">\n      <tr>\n        <td>first name:</td>\n        <td>Igor</td>\n        <td>(in Russian - Игорь)</td>\n      </tr>\n      <tr>\n        <td>middle name:</td>\n        <td>Gennadevich</td>\n        <td>(in Russian - Геннадьевич)</td>\n      </tr>\n      <tr>\n        <td>last name:</td>\n        <td>Shatalov</td>\n        <td>(in Russian - Шаталов)</td>\n      </tr>\n      <tr>\n        <td>phone:</td>\n        <td>+7-983-459-87-93</td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>email:</td>\n        <td>little.foot.2.email@gmail.com</td>\n        <td></td>\n      </tr>\n      <tr>\n        <td colspan=\"3\">\n          And be sure to indicate that the transfer is material assistance.\n        </td>\n      </tr>\n    </table>\n  </div>\n\n  <p>&nbsp;</p>\n  <p>\n    <b>\n      Thank you for your attention to us!\n    </b>\n  </p>\n\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <p>\n      And if you can, then help me with money so that I can pick up those puppies and kittens that I saw on the streets from the street and record them to pick them up when I find work. It has been a long time since I saw them, but I want to pick up those who have not died or fled in search of food. So far I don’t even know how many puppies and kittens are still there, and I can’t say how much money is needed. I will go and look for them, which of these puppies and kittens is still alive or has not fled in search of food, and if I find them, I will write and ask for a donation.\n    </p>\n  \n    <p>\n      If I don’t take these puppies and kittens from the street now, I’ll have to wait until I find work abroad and get my first salary, which is a month or more. During this time, they will surely die there, now we have winter frosts in Ulan-Ude.\n    </p>\n  </div>\n\n  <hr>\n  <hr>\n  <hr>\n  <p style=\"font-size: 1.3em;\">\n    And join the Features CSS team, even if you can't help us! I think the \"Features CSS\" should change the global approach to creating responsive CSS!\n  </p>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/user/containers/about-features-css-container/about-features-css-container.component.html":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/user/containers/about-features-css-container/about-features-css-container.component.html ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Page -->\n<div class=\"container\">\n  <app-page-title>About \"Features CSS\"</app-page-title>\n</div>\n\n<!-- \"Features CSS\" section -->\n<div class=\"container\">\n  <app-page-section-title>\"Features CSS\"</app-page-section-title>\n\n  <p>\n    \"Features CSS\" this is CSS-preprocessor for creating of responsive CSS. Creating responsive CSS as it is now is not very convenient in my opinion. See how \"Features CSS\" makes it easy to create responsive CSS:\n  </p>\n</div>\n\n<!-- \"Features CSS\" example sub-section -->\n<div class=\"container\">\n  <app-page-sub-section-title>\"Features CSS\" example</app-page-sub-section-title>\n\n  <p>\n    For example, we need to create a toggleable sidebar. See how “Features CSS” allows you to conveniently create CSS:\n  </p>\n\n  <app-code-snippet [snippet]=\"snippets.featuresCssExample\"></app-code-snippet>\n</div>\n\n<!-- Additional examples for \"Features CSS\" sub-section -->\n<div class=\"container\">\n  <app-page-sub-section-title>Additional examples for \"Features CSS\"</app-page-sub-section-title>\n\n  <app-code-snippet [snippet]=\"snippets.additionalFeaturesCssExamples\"></app-code-snippet>\n</div>\n\n<!-- \"Features CSS JS Ext\" section -->\n<div class=\"container\">\n  <app-page-section-title>\"Features CSS JS Ext\"</app-page-section-title>\n\n  <p>\n    <b>Problem:</b> Why \"side-menu-item\" view (\"small\" or \"large\") must depends from browser width? In \"toggleable\" state \"side-menu\" can has width greater than in \"fixed\" state, but in \"toggleable\" state browser width is smaller than in \"fixed\" state. In addition, even if the element width is proportional to the browser width, but not equal to the browser width, then standard media queries by browser width will work indirectly. I think the \"side-menu-item\" state (\"small\" or \"large\") must depends from \"side-menu-item\" width. \"Features CSS JS Ext\" can provide such functionality - states by element width/height. And this states by element width/height work very fast, almost at the same speed as standard media queries by the browser width/height. It is only possible that the states by element width/height will lag one frame. But one frame it is very small.\n  </p>\n\n  <p>\n    Using \"Features CSS JS Ext\" you can use states not only by browser width and height, but and by DOM element width and height (states by element size). To use states by element size you your element must meet the one requirement:\n    <br>\n    - The width or height of element must be calculated by formula from browser width and height.\n  </p>\n\n  <p>\n    These requirement is met in almost all UI applications cases where responsiveness is required by element size.\n  </p>\n\n  <p>\n    For states by element width, these requirement is not fulfilled if the element or its parents (on which the width of the element depends) have a width equal to \"auto\". But in most UI applications for such elements with width \"auto\", responsiveness by the width of the element is not required. Agree that it sounds strange to demand responsiveness by the width of the element, if the width of the element is rubber and varies depending on the content of the element. The same for responsiveness by the height of the element: it sounds strange to demand responsiveness by the height of the element, if the height of the element is rubber and varies depending on the content of the element.\n  </p>\n\n  <p>\n    But if you still need to make states by element width/height for an element with a width/height equals to auto, then you can use a different mode for states by element width/height (only this mode is slower). That is, it is still possible to make states by element width/height for rubber elements.\n  </p>\n\n  <app-code-snippet [snippet]=\"snippets.featuresCssJsExtExample\"></app-code-snippet>\n</div>\n\n<hr>\n<hr>\n<hr>\n<div class=\"container\">\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <b>\n      To join the \"Features CSS\" team to develop the \"Features CSS\" CSS-preprocessor together click the \"Team\" button in Nav Bar on the top of this page!\n    </b>\n  </div>\n</div>\n\n<div class=\"gl-page-bottom\"></div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/user/containers/about-save-project-container/about-save-project-container.component.html":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/user/containers/about-save-project-container/about-save-project-container.component.html ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>about-save-project-container works!</p>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/user/containers/features-css-team-container/features-css-team-container.component.html":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/user/containers/features-css-team-container/features-css-team-container.component.html ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"in-root\" #root>\n  <div #wait class=\"in-wait\">Please wait...</div>\n  <iframe\n    class=\"in-team-chat-iframe\"\n    src=\"http://130.211.221.3\"\n  ></iframe>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/user/containers/save-team-container/save-team-container.component.html":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/user/containers/save-team-container/save-team-container.component.html ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>save-team-container works!</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/app-routing.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/*! exports provided: absoluteUrls, AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "absoluteUrls", function() { return absoluteUrls; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/logic/module-urls */ "./src/app/shared/logic/module-urls.ts");
+/* harmony import */ var _user_user_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user/user-routing.module */ "./src/app/user/user-routing.module.ts");
+
+
+
+
+
+//
+// Absolute urls
+//
+var absoluteUrls = {
+    user: new _user_user_routing_module__WEBPACK_IMPORTED_MODULE_4__["UserModuleUrls"](new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_3__["ModuleUrlsAbsoluteContext"]('')),
+};
+//
+// Routes
+//
+var routes = [
+    {
+        path: absoluteUrls.user.rootUrlNoSlash(),
+        loadChildren: './user/user.module#UserModule'
+    },
+    {
+        path: '**',
+        redirectTo: absoluteUrls.user.rootUrlNoSlash(),
+    },
+];
+//
+// Module
+//
+var AppRoutingModule = /** @class */ (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        })
+    ], AppRoutingModule);
+    return AppRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.component.scss":
+/*!************************************!*\
+  !*** ./src/app/app.component.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".navbar {\n  padding-top: 0;\n  padding-bottom: 0;\n}\n@media (max-width: 400px) {\n  .navbar {\n    padding-left: 0;\n    padding-right: 0;\n  }\n}\n@media (max-width: 400px) {\n  .in-projects-separator {\n    width: 2px;\n    background-color: #888;\n  }\n}\n@media (min-width: 401px) {\n  .in-projects-separator {\n    width: 30px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFVQTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtBQ1RGO0FEV0U7RUFKRjtJQUtJLGVBQUE7SUFDQSxnQkFBQTtFQ1JGO0FBQ0Y7QURnQkU7RUFERjtJQUVJLFVBQUE7SUFDQSxzQkFBQTtFQ1pGO0FBQ0Y7QURjRTtFQU5GO0lBT0ksV0FBQTtFQ1hGO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL1xuLy8gVmFyc1xuLy9cblxuJHNtYWxsLW1heC13aWR0aDogNDAwcHg7XG5cbi8vXG4vLyBPdmVycmlkZSB0aGlyZC1wYXJ0eVxuLy9cblxuLm5hdmJhciB7XG4gIHBhZGRpbmctdG9wOiAwO1xuICBwYWRkaW5nLWJvdHRvbTogMDtcblxuICBAbWVkaWEgKG1heC13aWR0aDogJHNtYWxsLW1heC13aWR0aCkge1xuICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICBwYWRkaW5nLXJpZ2h0OiAwO1xuICB9XG59XG5cbi8vXG4vLyBUaGlzXG4vL1xuXG4uaW4tcHJvamVjdHMtc2VwYXJhdG9yIHtcbiAgQG1lZGlhIChtYXgtd2lkdGg6ICRzbWFsbC1tYXgtd2lkdGgpIHtcbiAgICB3aWR0aDogMnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM4ODg7XG4gIH1cblxuICBAbWVkaWEgKG1pbi13aWR0aDogJHNtYWxsLW1heC13aWR0aCArIDEpIHtcbiAgICB3aWR0aDogMzBweDtcbiAgfVxufSIsIi5uYXZiYXIge1xuICBwYWRkaW5nLXRvcDogMDtcbiAgcGFkZGluZy1ib3R0b206IDA7XG59XG5AbWVkaWEgKG1heC13aWR0aDogNDAwcHgpIHtcbiAgLm5hdmJhciB7XG4gICAgcGFkZGluZy1sZWZ0OiAwO1xuICAgIHBhZGRpbmctcmlnaHQ6IDA7XG4gIH1cbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDQwMHB4KSB7XG4gIC5pbi1wcm9qZWN0cy1zZXBhcmF0b3Ige1xuICAgIHdpZHRoOiAycHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzg4ODtcbiAgfVxufVxuQG1lZGlhIChtaW4td2lkdGg6IDQwMXB4KSB7XG4gIC5pbi1wcm9qZWN0cy1zZXBhcmF0b3Ige1xuICAgIHdpZHRoOiAzMHB4O1xuICB9XG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/app.component.ts":
+/*!**********************************!*\
+  !*** ./src/app/app.component.ts ***!
+  \**********************************/
+/*! exports provided: AppComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/models/components/github-link */ "./src/app/shared/models/components/github-link.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+
+
+
+
+var fcssNavbarLinkGroup = {
+    title: 'Features CSS',
+    links: [
+        {
+            text: 'About',
+            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.aboutFeaturesCss.url,
+        },
+        {
+            text: 'Team',
+            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.featuresCssTeam.url,
+        },
+        new _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_2__["GitHubLink"]('https://github.com/features-css/features-css'),
+    ],
+};
+var saveProjectLinkGroup = {
+    title: 'Save Project',
+    links: [
+        {
+            text: 'About',
+            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.aboutSaveProject.url,
+        },
+        {
+            text: 'Team',
+            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.saveTeam.url,
+        },
+        new _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_2__["GitHubLink"]('https://github.com/save-team'),
+    ],
+};
+var AppComponent = /** @class */ (function () {
+    function AppComponent() {
+        this.navbarLinkGroups = [
+            fcssNavbarLinkGroup
+        ];
+    }
+    AppComponent.prototype.ngAfterViewInit = function () {
+        var pleaseHelpMeShowedOnce = localStorage.getItem('pleaseHelpMeShowedOnce');
+        if (!pleaseHelpMeShowedOnce) {
+            this.openPleaseHelpMeModal();
+            localStorage.setItem('pleaseHelpMeShowedOnce', 'true');
+        }
+    };
+    AppComponent.prototype.onClickDonateMeAndMyAnimals = function (e) {
+        e.preventDefault();
+        this.pleaseHelpMeModal.open();
+    };
+    AppComponent.prototype.openPleaseHelpMeModal = function () {
+        this.pleaseHelpMeModal.open();
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('pleaseHelpMeModal', null)
+    ], AppComponent.prototype, "pleaseHelpMeModal", void 0);
+    AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-root',
+            template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
+            styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
+        })
+    ], AppComponent);
+    return AppComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.module.ts":
+/*!*******************************!*\
+  !*** ./src/app/app.module.ts ***!
+  \*******************************/
+/*! exports provided: AppModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _user_user_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user/user.module */ "./src/app/user/user.module.ts");
+
+
+
+
+
+
+
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
+                _user_user_module__WEBPACK_IMPORTED_MODULE_6__["UserModule"],
+            ],
+            declarations: [
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
+            ],
+            providers: [],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/code-snippet/code-snippet.component.scss":
+/*!****************************************************************************!*\
+  !*** ./src/app/shared/components/code-snippet/code-snippet.component.scss ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2NvZGUtc25pcHBldC9jb2RlLXNuaXBwZXQuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/code-snippet/code-snippet.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/shared/components/code-snippet/code-snippet.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: CodeSnippetComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeSnippetComponent", function() { return CodeSnippetComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CodeSnippetComponent = /** @class */ (function () {
+    function CodeSnippetComponent() {
+    }
+    CodeSnippetComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], CodeSnippetComponent.prototype, "snippet", void 0);
+    CodeSnippetComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-code-snippet',
+            template: __webpack_require__(/*! raw-loader!./code-snippet.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/code-snippet/code-snippet.component.html"),
+            styles: [__webpack_require__(/*! ./code-snippet.component.scss */ "./src/app/shared/components/code-snippet/code-snippet.component.scss")]
+        })
+    ], CodeSnippetComponent);
+    return CodeSnippetComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/modal/modal.component.scss":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/components/modal/modal.component.scss ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".in-please-donate-us-btn {\n  border: none;\n  opacity: 1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC9zaGFyZWQvY29tcG9uZW50cy9tb2RhbC9tb2RhbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbW9kYWwvbW9kYWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsVUFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbW9kYWwvbW9kYWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW4tcGxlYXNlLWRvbmF0ZS11cy1idG4ge1xuICBib3JkZXI6IG5vbmU7XG4gIG9wYWNpdHk6IDE7XG59IiwiLmluLXBsZWFzZS1kb25hdGUtdXMtYnRuIHtcbiAgYm9yZGVyOiBub25lO1xuICBvcGFjaXR5OiAxO1xufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/modal/modal.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/shared/components/modal/modal.component.ts ***!
+  \************************************************************/
+/*! exports provided: ModalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalComponent", function() { return ModalComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+
+
+
+var ModalComponent = /** @class */ (function () {
+    function ModalComponent(modalService) {
+        this.modalService = modalService;
+    }
+    Object.defineProperty(ModalComponent.prototype, "titleAsHtml", {
+        get: function () {
+            var result;
+            if (!this.title) {
+                result = '';
+            }
+            else if (typeof this.title === 'string') {
+                result = this.title;
+            }
+            else {
+                result = this.title.join('<br>');
+            }
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ModalComponent.prototype.ngOnInit = function () {
+    };
+    ModalComponent.prototype.open = function () {
+        this.modalService.open(this.content, { scrollable: true, size: 'lg' }).result.then(function (result) {
+            // OK
+        }, function (reason) {
+            // Cancel
+        });
+    };
+    ModalComponent.ctorParameters = function () { return [
+        { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"] }
+    ]; };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('content', null)
+    ], ModalComponent.prototype, "content", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], ModalComponent.prototype, "title", void 0);
+    ModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-modal',
+            template: __webpack_require__(/*! raw-loader!./modal.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/modal/modal.component.html"),
+            styles: [__webpack_require__(/*! ./modal.component.scss */ "./src/app/shared/components/modal/modal.component.scss")]
+        })
+    ], ModalComponent);
+    return ModalComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/navbar-link-group/navbar-link-group.component.scss":
+/*!**************************************************************************************!*\
+  !*** ./src/app/shared/components/navbar-link-group/navbar-link-group.component.scss ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".navbar-brand {\n  margin-right: 0;\n}\n\nul.navbar-nav {\n  width: 100%;\n}\n\n.in-root {\n  text-align: center;\n}\n\nli {\n  position: relative;\n}\n\nli.active .in-link-active-marker {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  height: 4px;\n  background-color: orange;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC9zaGFyZWQvY29tcG9uZW50cy9uYXZiYXItbGluay1ncm91cC9uYXZiYXItbGluay1ncm91cC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbmF2YmFyLWxpbmstZ3JvdXAvbmF2YmFyLWxpbmstZ3JvdXAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUE7RUFDRSxlQUFBO0FDSEY7O0FETUE7RUFDRSxXQUFBO0FDSEY7O0FEVUE7RUFDRSxrQkFBQTtBQ1BGOztBRFVBO0VBQ0Usa0JBQUE7QUNQRjs7QURVSTtFQUNFLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUVBLHdCQUFBO0FDVE4iLCJmaWxlIjoic3JjL2FwcC9zaGFyZWQvY29tcG9uZW50cy9uYXZiYXItbGluay1ncm91cC9uYXZiYXItbGluay1ncm91cC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vXG4vLyBPdmVycmlkZSB0aGlyZC1wYXJ0eVxuLy9cblxuLm5hdmJhci1icmFuZCB7XG4gIG1hcmdpbi1yaWdodDogMDtcbn1cblxudWwubmF2YmFyLW5hdiB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4vL1xuLy8gVGhpc1xuLy9cblxuLmluLXJvb3Qge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbmxpIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuXG4gICYuYWN0aXZlIHtcbiAgICAuaW4tbGluay1hY3RpdmUtbWFya2VyIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGxlZnQ6IDA7XG4gICAgICByaWdodDogMDtcbiAgICAgIGJvdHRvbTogMDtcbiAgICAgIGhlaWdodDogNHB4O1xuXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBvcmFuZ2U7XG4gICAgfVxuICB9XG59IiwiLm5hdmJhci1icmFuZCB7XG4gIG1hcmdpbi1yaWdodDogMDtcbn1cblxudWwubmF2YmFyLW5hdiB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uaW4tcm9vdCB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxubGkge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5saS5hY3RpdmUgLmluLWxpbmstYWN0aXZlLW1hcmtlciB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMDtcbiAgaGVpZ2h0OiA0cHg7XG4gIGJhY2tncm91bmQtY29sb3I6IG9yYW5nZTtcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/navbar-link-group/navbar-link-group.component.ts":
+/*!************************************************************************************!*\
+  !*** ./src/app/shared/components/navbar-link-group/navbar-link-group.component.ts ***!
+  \************************************************************************************/
+/*! exports provided: NavbarLinkGroupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarLinkGroupComponent", function() { return NavbarLinkGroupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var NavbarLinkGroupComponent = /** @class */ (function () {
+    function NavbarLinkGroupComponent() {
+    }
+    NavbarLinkGroupComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], NavbarLinkGroupComponent.prototype, "linkGroup", void 0);
+    NavbarLinkGroupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-navbar-link-group',
+            template: __webpack_require__(/*! raw-loader!./navbar-link-group.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/navbar-link-group/navbar-link-group.component.html"),
+            styles: [__webpack_require__(/*! ./navbar-link-group.component.scss */ "./src/app/shared/components/navbar-link-group/navbar-link-group.component.scss")]
+        })
+    ], NavbarLinkGroupComponent);
+    return NavbarLinkGroupComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/page-section-title/page-section-title.component.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/app/shared/components/page-section-title/page-section-title.component.scss ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3BhZ2Utc2VjdGlvbi10aXRsZS9wYWdlLXNlY3Rpb24tdGl0bGUuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/page-section-title/page-section-title.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/shared/components/page-section-title/page-section-title.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: PageSectionTitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageSectionTitleComponent", function() { return PageSectionTitleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageSectionTitleComponent = /** @class */ (function () {
+    function PageSectionTitleComponent() {
+    }
+    PageSectionTitleComponent.prototype.ngOnInit = function () {
+    };
+    PageSectionTitleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-section-title',
+            template: __webpack_require__(/*! raw-loader!./page-section-title.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/page-section-title/page-section-title.component.html"),
+            styles: [__webpack_require__(/*! ./page-section-title.component.scss */ "./src/app/shared/components/page-section-title/page-section-title.component.scss")]
+        })
+    ], PageSectionTitleComponent);
+    return PageSectionTitleComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.scss":
+/*!************************************************************************************************!*\
+  !*** ./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.scss ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3BhZ2Utc3ViLXNlY3Rpb24tdGl0bGUvcGFnZS1zdWItc2VjdGlvbi10aXRsZS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.ts":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.ts ***!
+  \**********************************************************************************************/
+/*! exports provided: PageSubSectionTitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageSubSectionTitleComponent", function() { return PageSubSectionTitleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageSubSectionTitleComponent = /** @class */ (function () {
+    function PageSubSectionTitleComponent() {
+    }
+    PageSubSectionTitleComponent.prototype.ngOnInit = function () {
+    };
+    PageSubSectionTitleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-sub-section-title',
+            template: __webpack_require__(/*! raw-loader!./page-sub-section-title.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.html"),
+            styles: [__webpack_require__(/*! ./page-sub-section-title.component.scss */ "./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.scss")]
+        })
+    ], PageSubSectionTitleComponent);
+    return PageSubSectionTitleComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/page-title/page-title.component.scss":
+/*!************************************************************************!*\
+  !*** ./src/app/shared/components/page-title/page-title.component.scss ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3BhZ2UtdGl0bGUvcGFnZS10aXRsZS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/page-title/page-title.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/shared/components/page-title/page-title.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: PageTitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageTitleComponent", function() { return PageTitleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageTitleComponent = /** @class */ (function () {
+    function PageTitleComponent() {
+    }
+    PageTitleComponent.prototype.ngOnInit = function () {
+    };
+    PageTitleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-title',
+            template: __webpack_require__(/*! raw-loader!./page-title.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/page-title/page-title.component.html"),
+            styles: [__webpack_require__(/*! ./page-title.component.scss */ "./src/app/shared/components/page-title/page-title.component.scss")]
+        })
+    ], PageTitleComponent);
+    return PageTitleComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/resp-text-item/resp-text-item.component.scss":
+/*!********************************************************************************!*\
+  !*** ./src/app/shared/components/resp-text-item/resp-text-item.component.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3Jlc3AtdGV4dC1pdGVtL3Jlc3AtdGV4dC1pdGVtLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/resp-text-item/resp-text-item.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/shared/components/resp-text-item/resp-text-item.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: RespTextItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespTextItemComponent", function() { return RespTextItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_resp_text_checker_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resp-text-checker.service */ "./src/app/shared/services/resp-text-checker.service.ts");
+/* harmony import */ var _services_icon_checker_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/icon-checker.service */ "./src/app/shared/services/icon-checker.service.ts");
+
+
+
+
+var IconProperty;
+(function (IconProperty) {
+    IconProperty["Icon"] = "Icon";
+    IconProperty["Scale"] = "Scale";
+})(IconProperty || (IconProperty = {}));
+var RespTextItemComponent = /** @class */ (function () {
+    function RespTextItemComponent(checker, iconChecker) {
+        this.checker = checker;
+        this.iconChecker = iconChecker;
+    }
+    Object.defineProperty(RespTextItemComponent.prototype, "iconClass", {
+        get: function () {
+            return this.getIconPropertyValue(IconProperty.Icon);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RespTextItemComponent.prototype, "iconScale", {
+        get: function () {
+            return this.getIconPropertyValue(IconProperty.Scale);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    RespTextItemComponent.prototype.ngOnInit = function () {
+    };
+    RespTextItemComponent.prototype.getIconPropertyValue = function (iconProperty) {
+        var propertyValue = null;
+        if (this.checker.isItem(this.textItem)) {
+            var typedTextItem = this.textItem;
+            if (this.iconChecker.isString(typedTextItem.icon)) {
+                if (this.iconPropertyIsIcon(iconProperty)) {
+                    propertyValue = typedTextItem.icon;
+                }
+                else if (this.iconPropertyIsScale(iconProperty)) {
+                    propertyValue = 1;
+                }
+            }
+            else if (this.iconChecker.isIcon(typedTextItem.icon)) {
+                var typedIcon = typedTextItem.icon;
+                if (this.iconPropertyIsIcon(iconProperty)) {
+                    propertyValue = typedIcon.icon;
+                }
+                else if (this.iconPropertyIsScale(iconProperty)) {
+                    propertyValue = typedIcon.scale || 1;
+                }
+            }
+        }
+        return propertyValue;
+    };
+    RespTextItemComponent.prototype.iconPropertyIsIcon = function (iconProperty) {
+        return iconProperty === IconProperty.Icon;
+    };
+    RespTextItemComponent.prototype.iconPropertyIsScale = function (iconProperty) {
+        return iconProperty === IconProperty.Scale;
+    };
+    RespTextItemComponent.ctorParameters = function () { return [
+        { type: _services_resp_text_checker_service__WEBPACK_IMPORTED_MODULE_2__["RespTextCheckerService"] },
+        { type: _services_icon_checker_service__WEBPACK_IMPORTED_MODULE_3__["IconCheckerService"] }
+    ]; };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], RespTextItemComponent.prototype, "textItem", void 0);
+    RespTextItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-resp-text-item',
+            template: __webpack_require__(/*! raw-loader!./resp-text-item.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/resp-text-item/resp-text-item.component.html"),
+            styles: [__webpack_require__(/*! ./resp-text-item.component.scss */ "./src/app/shared/components/resp-text-item/resp-text-item.component.scss")]
+        })
+    ], RespTextItemComponent);
+    return RespTextItemComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/resp-text/resp-text.component.scss":
+/*!**********************************************************************!*\
+  !*** ./src/app/shared/components/resp-text/resp-text.component.scss ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3Jlc3AtdGV4dC9yZXNwLXRleHQuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/resp-text/resp-text.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/shared/components/resp-text/resp-text.component.ts ***!
+  \********************************************************************/
+/*! exports provided: RespTextComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespTextComponent", function() { return RespTextComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_resp_text_checker_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resp-text-checker.service */ "./src/app/shared/services/resp-text-checker.service.ts");
+
+
+
+var RespTextComponent = /** @class */ (function () {
+    function RespTextComponent(checker) {
+        this.checker = checker;
+    }
+    RespTextComponent.prototype.ngOnInit = function () {
+    };
+    RespTextComponent.ctorParameters = function () { return [
+        { type: _services_resp_text_checker_service__WEBPACK_IMPORTED_MODULE_2__["RespTextCheckerService"] }
+    ]; };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], RespTextComponent.prototype, "text", void 0);
+    RespTextComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-resp-text',
+            template: __webpack_require__(/*! raw-loader!./resp-text.component.html */ "./node_modules/raw-loader/index.js!./src/app/shared/components/resp-text/resp-text.component.html"),
+            styles: [__webpack_require__(/*! ./resp-text.component.scss */ "./src/app/shared/components/resp-text/resp-text.component.scss")]
+        })
+    ], RespTextComponent);
+    return RespTextComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/logic/module-urls.ts":
+/*!*********************************************!*\
+  !*** ./src/app/shared/logic/module-urls.ts ***!
+  \*********************************************/
+/*! exports provided: ModuleUrlsRootUrl, ModuleUrlsItem, ModuleUrlsRelativeContext, ModuleUrlsAbsoluteContext, ModuleUrls */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsRootUrl", function() { return ModuleUrlsRootUrl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsItem", function() { return ModuleUrlsItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsRelativeContext", function() { return ModuleUrlsRelativeContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsAbsoluteContext", function() { return ModuleUrlsAbsoluteContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrls", function() { return ModuleUrls; });
+//
+// Root url
+//
+var ModuleUrlsRootUrl = /** @class */ (function () {
+    function ModuleUrlsRootUrl(urlNoSlash) {
+        this._urlNoSlash = urlNoSlash;
+    }
+    Object.defineProperty(ModuleUrlsRootUrl.prototype, "urlWithSlash", {
+        get: function () {
+            return "/" + this._urlNoSlash;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ModuleUrlsRootUrl.prototype, "urlNoSlash", {
+        get: function () {
+            return this._urlNoSlash;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ModuleUrlsRootUrl.ctorParameters = function () { return [
+        { type: String }
+    ]; };
+    return ModuleUrlsRootUrl;
+}());
+
+//
+// Item
+//
+var ModuleUrlsItem = /** @class */ (function () {
+    function ModuleUrlsItem(moduleUrls, url) {
+        this._moduleUrls = moduleUrls;
+        this._url = url;
+    }
+    Object.defineProperty(ModuleUrlsItem.prototype, "url", {
+        get: function () {
+            var url;
+            if (this._moduleUrls.context instanceof ModuleUrlsRelativeContext) {
+                url = this._url;
+            }
+            else if (this._moduleUrls.context instanceof ModuleUrlsAbsoluteContext) {
+                var absoluteContext = this._moduleUrls.context;
+                url = "" + absoluteContext.rootUrl.urlWithSlash + this._url;
+            }
+            return url;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ModuleUrlsItem.ctorParameters = function () { return [
+        { type: ModuleUrls },
+        { type: String }
+    ]; };
+    return ModuleUrlsItem;
+}());
+
+//
+// Relative context
+//
+var ModuleUrlsRelativeContext = /** @class */ (function () {
+    function ModuleUrlsRelativeContext() {
+    }
+    return ModuleUrlsRelativeContext;
+}());
+
+//
+// Absolute context
+//
+var ModuleUrlsAbsoluteContext = /** @class */ (function () {
+    function ModuleUrlsAbsoluteContext(rootUrlNoSlash) {
+        this.rootUrl = new ModuleUrlsRootUrl(rootUrlNoSlash);
+    }
+    ModuleUrlsAbsoluteContext.ctorParameters = function () { return [
+        { type: String }
+    ]; };
+    return ModuleUrlsAbsoluteContext;
+}());
+
+//
+// Module urls
+//
+var ModuleUrls = /** @class */ (function () {
+    function ModuleUrls(context) {
+        this.context = context;
+    }
+    ModuleUrls.prototype.rootUrlWithSlash = function () {
+        return this.rootUrl(true);
+    };
+    ModuleUrls.prototype.rootUrlNoSlash = function () {
+        return this.rootUrl(false);
+    };
+    ModuleUrls.prototype.rootUrl = function (withSlash) {
+        var result = null;
+        if (this.context instanceof ModuleUrlsAbsoluteContext) {
+            var absoluteContext = this.context;
+            var rootUrl = absoluteContext.rootUrl;
+            result = withSlash ? rootUrl.urlWithSlash : rootUrl.urlNoSlash;
+        }
+        return result;
+    };
+    ModuleUrls.ctorParameters = function () { return [
+        { type: undefined }
+    ]; };
+    return ModuleUrls;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/components/code-snippet.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/shared/models/components/code-snippet.ts ***!
+  \**********************************************************/
+/*! exports provided: CodeLanguage, CodeSnippet, CodeSnippetOnScss */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeLanguage", function() { return CodeLanguage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeSnippet", function() { return CodeSnippet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CodeSnippetOnScss", function() { return CodeSnippetOnScss; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var CodeLanguage;
+(function (CodeLanguage) {
+    CodeLanguage["scss"] = "scss";
+})(CodeLanguage || (CodeLanguage = {}));
+var CodeSnippet = /** @class */ (function () {
+    function CodeSnippet(language, code) {
+        this.language = language;
+        this.code = code;
+    }
+    CodeSnippet.ctorParameters = function () { return [
+        { type: undefined },
+        { type: String }
+    ]; };
+    return CodeSnippet;
+}());
+
+var CodeSnippetOnScss = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](CodeSnippetOnScss, _super);
+    function CodeSnippetOnScss(code) {
+        return _super.call(this, CodeLanguage.scss, code) || this;
+    }
+    CodeSnippetOnScss.ctorParameters = function () { return [
+        { type: String }
+    ]; };
+    return CodeSnippetOnScss;
+}(CodeSnippet));
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/components/github-link.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/shared/models/components/github-link.ts ***!
+  \*********************************************************/
+/*! exports provided: GitHubLink */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GitHubLink", function() { return GitHubLink; });
+/* harmony import */ var _resp_text_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resp-text-model */ "./src/app/shared/models/components/resp-text-model.ts");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icon */ "./src/app/shared/models/components/icon.ts");
+
+
+var GitHubLink = /** @class */ (function () {
+    function GitHubLink(url) {
+        this.text = _resp_text_model__WEBPACK_IMPORTED_MODULE_0__["RespText"].create(_resp_text_model__WEBPACK_IMPORTED_MODULE_0__["RespTextItem"].createIconAndText(_icon__WEBPACK_IMPORTED_MODULE_1__["Icon"].create(GitHubLink.icon, 1.5), 'GitHub'), _resp_text_model__WEBPACK_IMPORTED_MODULE_0__["RespTextItem"].createIcon(_icon__WEBPACK_IMPORTED_MODULE_1__["Icon"].create(GitHubLink.icon, 1.8)));
+        this.url = url;
+        this.routerLinkActiveOptions = null;
+        this.external = true;
+    }
+    GitHubLink.icon = 'fab fa-github';
+    GitHubLink.ctorParameters = function () { return [
+        { type: String }
+    ]; };
+    return GitHubLink;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/components/icon.ts":
+/*!**************************************************!*\
+  !*** ./src/app/shared/models/components/icon.ts ***!
+  \**************************************************/
+/*! exports provided: Icon */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return Icon; });
+var Icon = /** @class */ (function () {
+    function Icon(icon, scale) {
+        if (scale === void 0) { scale = 1; }
+        this.icon = icon;
+        this.scale = scale;
+    }
+    Icon.create = function (icon, scale) {
+        if (scale === void 0) { scale = 1; }
+        return new Icon(icon, scale);
+    };
+    Icon.ctorParameters = function () { return [
+        { type: String },
+        { type: Number }
+    ]; };
+    return Icon;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/models/components/resp-text-model.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/shared/models/components/resp-text-model.ts ***!
+  \*************************************************************/
+/*! exports provided: RespTextItem, RespText */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespTextItem", function() { return RespTextItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespText", function() { return RespText; });
+//
+// Item
+//
+var RespTextItem = /** @class */ (function () {
+    function RespTextItem(icon, text) {
+        if (icon === void 0) { icon = null; }
+        if (text === void 0) { text = null; }
+        this.icon = icon;
+        this.text = text;
+    }
+    RespTextItem.createIcon = function (icon) {
+        return new RespTextItem(icon, null);
+    };
+    RespTextItem.createText = function (text) {
+        return new RespTextItem(null, text);
+    };
+    RespTextItem.createIconAndText = function (icon, text) {
+        return new RespTextItem(icon, text);
+    };
+    RespTextItem.ctorParameters = function () { return [
+        { type: undefined },
+        { type: String }
+    ]; };
+    return RespTextItem;
+}());
+
+//
+// Text
+//
+var RespText = /** @class */ (function () {
+    function RespText(text, smallText) {
+        if (text === void 0) { text = null; }
+        if (smallText === void 0) { smallText = null; }
+        this.text = text;
+        this.smallText = smallText;
+    }
+    RespText.create = function (text, smallText) {
+        return new RespText(text, smallText);
+    };
+    RespText.ctorParameters = function () { return [
+        { type: undefined },
+        { type: undefined }
+    ]; };
+    return RespText;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/icon-checker.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/shared/services/icon-checker.service.ts ***!
+  \*********************************************************/
+/*! exports provided: IconCheckerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconCheckerService", function() { return IconCheckerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_components_icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/components/icon */ "./src/app/shared/models/components/icon.ts");
+
+
+
+var IconCheckerService = /** @class */ (function () {
+    function IconCheckerService() {
+    }
+    IconCheckerService.prototype.isString = function (icon) {
+        return typeof icon === 'string';
+    };
+    IconCheckerService.prototype.isIcon = function (icon) {
+        return icon instanceof _models_components_icon__WEBPACK_IMPORTED_MODULE_2__["Icon"];
+    };
+    IconCheckerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], IconCheckerService);
+    return IconCheckerService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/services/resp-text-checker.service.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/services/resp-text-checker.service.ts ***!
+  \**************************************************************/
+/*! exports provided: RespTextCheckerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespTextCheckerService", function() { return RespTextCheckerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_components_resp_text_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/components/resp-text-model */ "./src/app/shared/models/components/resp-text-model.ts");
+
+
+
+var RespTextCheckerService = /** @class */ (function () {
+    function RespTextCheckerService() {
+    }
+    RespTextCheckerService.prototype.isString = function (text) {
+        return typeof text === 'string';
+    };
+    RespTextCheckerService.prototype.isItem = function (text) {
+        return text instanceof _models_components_resp_text_model__WEBPACK_IMPORTED_MODULE_2__["RespTextItem"];
+    };
+    RespTextCheckerService.prototype.isText = function (text) {
+        return text instanceof _models_components_resp_text_model__WEBPACK_IMPORTED_MODULE_2__["RespText"];
+    };
+    RespTextCheckerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], RespTextCheckerService);
+    return RespTextCheckerService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/shared.module.ts":
+/*!*****************************************!*\
+  !*** ./src/app/shared/shared.module.ts ***!
+  \*****************************************/
+/*! exports provided: SharedModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _ngx_prism_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngx-prism/core */ "./node_modules/@ngx-prism/core/dist/index.js");
+/* harmony import */ var _components_resp_text_resp_text_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/resp-text/resp-text.component */ "./src/app/shared/components/resp-text/resp-text.component.ts");
+/* harmony import */ var _components_navbar_link_group_navbar_link_group_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/navbar-link-group/navbar-link-group.component */ "./src/app/shared/components/navbar-link-group/navbar-link-group.component.ts");
+/* harmony import */ var _components_resp_text_item_resp_text_item_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/resp-text-item/resp-text-item.component */ "./src/app/shared/components/resp-text-item/resp-text-item.component.ts");
+/* harmony import */ var _components_code_snippet_code_snippet_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/code-snippet/code-snippet.component */ "./src/app/shared/components/code-snippet/code-snippet.component.ts");
+/* harmony import */ var _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/modal/modal.component */ "./src/app/shared/components/modal/modal.component.ts");
+/* harmony import */ var _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/page-title/page-title.component */ "./src/app/shared/components/page-title/page-title.component.ts");
+/* harmony import */ var _components_page_section_title_page_section_title_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/page-section-title/page-section-title.component */ "./src/app/shared/components/page-section-title/page-section-title.component.ts");
+/* harmony import */ var _components_page_sub_section_title_page_sub_section_title_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/page-sub-section-title/page-sub-section-title.component */ "./src/app/shared/components/page-sub-section-title/page-sub-section-title.component.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var SharedModule = /** @class */ (function () {
+    function SharedModule() {
+    }
+    SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"],
+                _ngx_prism_core__WEBPACK_IMPORTED_MODULE_5__["PrismModule"],
+            ],
+            declarations: [
+                _components_resp_text_resp_text_component__WEBPACK_IMPORTED_MODULE_6__["RespTextComponent"],
+                _components_resp_text_item_resp_text_item_component__WEBPACK_IMPORTED_MODULE_8__["RespTextItemComponent"],
+                _components_navbar_link_group_navbar_link_group_component__WEBPACK_IMPORTED_MODULE_7__["NavbarLinkGroupComponent"],
+                _components_code_snippet_code_snippet_component__WEBPACK_IMPORTED_MODULE_9__["CodeSnippetComponent"],
+                _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_10__["ModalComponent"],
+                _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_11__["PageTitleComponent"],
+                _components_page_section_title_page_section_title_component__WEBPACK_IMPORTED_MODULE_12__["PageSectionTitleComponent"],
+                _components_page_sub_section_title_page_sub_section_title_component__WEBPACK_IMPORTED_MODULE_13__["PageSubSectionTitleComponent"],
+            ],
+            exports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _components_resp_text_resp_text_component__WEBPACK_IMPORTED_MODULE_6__["RespTextComponent"],
+                _components_resp_text_item_resp_text_item_component__WEBPACK_IMPORTED_MODULE_8__["RespTextItemComponent"],
+                _components_navbar_link_group_navbar_link_group_component__WEBPACK_IMPORTED_MODULE_7__["NavbarLinkGroupComponent"],
+                _components_code_snippet_code_snippet_component__WEBPACK_IMPORTED_MODULE_9__["CodeSnippetComponent"],
+                _components_modal_modal_component__WEBPACK_IMPORTED_MODULE_10__["ModalComponent"],
+                _components_page_title_page_title_component__WEBPACK_IMPORTED_MODULE_11__["PageTitleComponent"],
+                _components_page_section_title_page_section_title_component__WEBPACK_IMPORTED_MODULE_12__["PageSectionTitleComponent"],
+                _components_page_sub_section_title_page_sub_section_title_component__WEBPACK_IMPORTED_MODULE_13__["PageSubSectionTitleComponent"],
+            ],
+        })
+    ], SharedModule);
+    return SharedModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/components/please-help-me/please-help-me.component.scss":
+/*!******************************************************************************!*\
+  !*** ./src/app/user/components/please-help-me/please-help-me.component.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29tcG9uZW50cy9wbGVhc2UtaGVscC1tZS9wbGVhc2UtaGVscC1tZS5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/user/components/please-help-me/please-help-me.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/user/components/please-help-me/please-help-me.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: PleaseHelpMeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PleaseHelpMeComponent", function() { return PleaseHelpMeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PleaseHelpMeComponent = /** @class */ (function () {
+    function PleaseHelpMeComponent() {
+    }
+    PleaseHelpMeComponent.prototype.ngOnInit = function () {
+    };
+    PleaseHelpMeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-please-help-me',
+            template: __webpack_require__(/*! raw-loader!./please-help-me.component.html */ "./node_modules/raw-loader/index.js!./src/app/user/components/please-help-me/please-help-me.component.html"),
+            styles: [__webpack_require__(/*! ./please-help-me.component.scss */ "./src/app/user/components/please-help-me/please-help-me.component.scss")]
+        })
+    ], PleaseHelpMeComponent);
+    return PleaseHelpMeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/containers/about-features-css-container/about-features-css-container.component.scss":
+/*!**********************************************************************************************************!*\
+  !*** ./src/app/user/containers/about-features-css-container/about-features-css-container.component.scss ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29udGFpbmVycy9hYm91dC1mZWF0dXJlcy1jc3MtY29udGFpbmVyL2Fib3V0LWZlYXR1cmVzLWNzcy1jb250YWluZXIuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user/containers/about-features-css-container/about-features-css-container.component.ts":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/user/containers/about-features-css-container/about-features-css-container.component.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: AboutFeaturesCssContainerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutFeaturesCssContainerComponent", function() { return AboutFeaturesCssContainerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _snippets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../snippets */ "./src/app/user/snippets/index.ts");
+
+
+
+var AboutFeaturesCssContainerComponent = /** @class */ (function () {
+    function AboutFeaturesCssContainerComponent() {
+        this.snippets = _snippets__WEBPACK_IMPORTED_MODULE_2__["snippets"];
+    }
+    AboutFeaturesCssContainerComponent.prototype.ngOnInit = function () {
+    };
+    AboutFeaturesCssContainerComponent.prototype.ngAfterViewInit = function () {
+    };
+    AboutFeaturesCssContainerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-about-features-css-container',
+            template: __webpack_require__(/*! raw-loader!./about-features-css-container.component.html */ "./node_modules/raw-loader/index.js!./src/app/user/containers/about-features-css-container/about-features-css-container.component.html"),
+            styles: [__webpack_require__(/*! ./about-features-css-container.component.scss */ "./src/app/user/containers/about-features-css-container/about-features-css-container.component.scss")]
+        })
+    ], AboutFeaturesCssContainerComponent);
+    return AboutFeaturesCssContainerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/containers/about-save-project-container/about-save-project-container.component.scss":
+/*!**********************************************************************************************************!*\
+  !*** ./src/app/user/containers/about-save-project-container/about-save-project-container.component.scss ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29udGFpbmVycy9hYm91dC1zYXZlLXByb2plY3QtY29udGFpbmVyL2Fib3V0LXNhdmUtcHJvamVjdC1jb250YWluZXIuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user/containers/about-save-project-container/about-save-project-container.component.ts":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/user/containers/about-save-project-container/about-save-project-container.component.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: AboutSaveProjectContainerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutSaveProjectContainerComponent", function() { return AboutSaveProjectContainerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AboutSaveProjectContainerComponent = /** @class */ (function () {
+    function AboutSaveProjectContainerComponent() {
+    }
+    AboutSaveProjectContainerComponent.prototype.ngOnInit = function () {
+    };
+    AboutSaveProjectContainerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-about-save-project-container',
+            template: __webpack_require__(/*! raw-loader!./about-save-project-container.component.html */ "./node_modules/raw-loader/index.js!./src/app/user/containers/about-save-project-container/about-save-project-container.component.html"),
+            styles: [__webpack_require__(/*! ./about-save-project-container.component.scss */ "./src/app/user/containers/about-save-project-container/about-save-project-container.component.scss")]
+        })
+    ], AboutSaveProjectContainerComponent);
+    return AboutSaveProjectContainerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/containers/features-css-team-container/features-css-team-container.component.scss":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/user/containers/features-css-team-container/features-css-team-container.component.scss ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".in-team-chat-iframe {\n  width: 100%;\n  height: 100%;\n}\n\n.in-wait {\n  z-index: 100;\n  position: absolute;\n  padding: 10px 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC91c2VyL2NvbnRhaW5lcnMvZmVhdHVyZXMtY3NzLXRlYW0tY29udGFpbmVyL2ZlYXR1cmVzLWNzcy10ZWFtLWNvbnRhaW5lci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvdXNlci9jb250YWluZXJzL2ZlYXR1cmVzLWNzcy10ZWFtLWNvbnRhaW5lci9mZWF0dXJlcy1jc3MtdGVhbS1jb250YWluZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtBQ0RGOztBRElBO0VBQ0UsWUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7QUNERiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29udGFpbmVycy9mZWF0dXJlcy1jc3MtdGVhbS1jb250YWluZXIvZmVhdHVyZXMtY3NzLXRlYW0tY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmluLXJvb3Qge31cblxuLmluLXRlYW0tY2hhdC1pZnJhbWUge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG4uaW4td2FpdCB7XG4gIHotaW5kZXg6IDEwMDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG59IiwiLmluLXRlYW0tY2hhdC1pZnJhbWUge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG4uaW4td2FpdCB7XG4gIHotaW5kZXg6IDEwMDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/user/containers/features-css-team-container/features-css-team-container.component.ts":
+/*!******************************************************************************************************!*\
+  !*** ./src/app/user/containers/features-css-team-container/features-css-team-container.component.ts ***!
+  \******************************************************************************************************/
+/*! exports provided: FeaturesCssTeamContainerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeaturesCssTeamContainerComponent", function() { return FeaturesCssTeamContainerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FeaturesCssTeamContainerComponent = /** @class */ (function () {
+    function FeaturesCssTeamContainerComponent() {
+    }
+    FeaturesCssTeamContainerComponent.prototype.ngOnInit = function () {
+    };
+    FeaturesCssTeamContainerComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this._interval = setInterval(function () { return _this.onIntervalTick(); }, 10);
+        setTimeout(function () {
+            _this.wait.nativeElement.style.display = 'none';
+        }, 3000);
+    };
+    FeaturesCssTeamContainerComponent.prototype.ngOnDestroy = function () {
+        if (this._interval) {
+            clearInterval(this._interval);
+        }
+    };
+    FeaturesCssTeamContainerComponent.prototype.onIntervalTick = function () {
+        var topNavbar = document.getElementById('id-top-navbar');
+        var bottomNavbar = document.getElementById('id-bottom-navbar');
+        var top = topNavbar ? topNavbar.offsetHeight : 0;
+        var bottom = bottomNavbar ? bottomNavbar.offsetHeight : 0;
+        this.root.nativeElement.style.position = 'fixed';
+        this.root.nativeElement.style.left = '0';
+        this.root.nativeElement.style.right = '0';
+        this.root.nativeElement.style.top = top + "px";
+        this.root.nativeElement.style.bottom = bottom + "px";
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('root', null)
+    ], FeaturesCssTeamContainerComponent.prototype, "root", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('wait', null)
+    ], FeaturesCssTeamContainerComponent.prototype, "wait", void 0);
+    FeaturesCssTeamContainerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-features-css-team-container',
+            template: __webpack_require__(/*! raw-loader!./features-css-team-container.component.html */ "./node_modules/raw-loader/index.js!./src/app/user/containers/features-css-team-container/features-css-team-container.component.html"),
+            styles: [__webpack_require__(/*! ./features-css-team-container.component.scss */ "./src/app/user/containers/features-css-team-container/features-css-team-container.component.scss")]
+        })
+    ], FeaturesCssTeamContainerComponent);
+    return FeaturesCssTeamContainerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/containers/save-team-container/save-team-container.component.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/app/user/containers/save-team-container/save-team-container.component.scss ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29udGFpbmVycy9zYXZlLXRlYW0tY29udGFpbmVyL3NhdmUtdGVhbS1jb250YWluZXIuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/user/containers/save-team-container/save-team-container.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/user/containers/save-team-container/save-team-container.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: SaveTeamContainerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaveTeamContainerComponent", function() { return SaveTeamContainerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var SaveTeamContainerComponent = /** @class */ (function () {
+    function SaveTeamContainerComponent() {
+    }
+    SaveTeamContainerComponent.prototype.ngOnInit = function () {
+    };
+    SaveTeamContainerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-save-team-container',
+            template: __webpack_require__(/*! raw-loader!./save-team-container.component.html */ "./node_modules/raw-loader/index.js!./src/app/user/containers/save-team-container/save-team-container.component.html"),
+            styles: [__webpack_require__(/*! ./save-team-container.component.scss */ "./src/app/user/containers/save-team-container/save-team-container.component.scss")]
+        })
+    ], SaveTeamContainerComponent);
+    return SaveTeamContainerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/snippets/index.ts":
+/*!****************************************!*\
+  !*** ./src/app/user/snippets/index.ts ***!
+  \****************************************/
+/*! exports provided: snippets */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "snippets", function() { return snippets; });
+/* harmony import */ var _items_additional_features_css_examples__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./items/additional-features-css-examples */ "./src/app/user/snippets/items/additional-features-css-examples.ts");
+/* harmony import */ var _items_features_css_example__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./items/features-css-example */ "./src/app/user/snippets/items/features-css-example.ts");
+/* harmony import */ var _items_features_css_js_ext_example__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items/features-css-js-ext-example */ "./src/app/user/snippets/items/features-css-js-ext-example.ts");
+
+
+
+var snippets = {
+    additionalFeaturesCssExamples: _items_additional_features_css_examples__WEBPACK_IMPORTED_MODULE_0__["additionalFeaturesCssExamples"],
+    featuresCssExample: _items_features_css_example__WEBPACK_IMPORTED_MODULE_1__["featuresCssExample"],
+    featuresCssJsExtExample: _items_features_css_js_ext_example__WEBPACK_IMPORTED_MODULE_2__["featuresCssJsExtExample"],
+};
+
+
+/***/ }),
+
+/***/ "./src/app/user/snippets/items/additional-features-css-examples.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/user/snippets/items/additional-features-css-examples.ts ***!
+  \*************************************************************************/
+/*! exports provided: additionalFeaturesCssExamples */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "additionalFeaturesCssExamples", function() { return additionalFeaturesCssExamples; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _shared_models_components_code_snippet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/models/components/code-snippet */ "./src/app/shared/models/components/code-snippet.ts");
+
+
+var additionalFeaturesCssExamples = new _shared_models_components_code_snippet__WEBPACK_IMPORTED_MODULE_1__["CodeSnippetOnScss"](String.raw(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n//=======================================\n// Applying of feature\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states: (\n    small: 1024px,\n    large: null,\n  ),\n) {\n  // Same as: @state @up win-width.small\n  @state @up .small {\n    .test-class { font-weight: bold; }\n  }\n}\n\n// You can also apply feature in any your CSS file\n\n@apply $my-feature {\n  @state @up .small {\n    .test-class { font-weight: bold; }\n  }\n}\n\n// Or use $my-feature states explicitly\n\n// Same as: @state @up $my-feature{win-width.small} {\n@state @up $my-feature{.small} {\n  .test-class { font-weight: bold; }\n}\n\n//=======================================\n// Parallel states example\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      small: 1024px,\n      large: null,\n    ),\n\n    //\n    // Custom state based on window width\n    //\n\n    #right-bar: @win-width-state(\n      hide-right-bar: 1200px,\n      show-right-bar: null,\n    )\n\n    // Both \"win-width\" and \"#right-bar\" states based on window width.\n  ),\n) {\n  ...\n}\n\n//=======================================\n// Example for other types of states\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      small: 1024px,\n      large: null,\n    ),\n\n    win-height: (\n      small: 500px,\n      large: null,\n    ),\n\n    #modal-opening: @selector-state(\n      opened: body.modal--opened,\n\n      closed: body:not(.modal--opened),\n    ),\n  ),\n) {\n\n  //\n  // You can combine selectors for different types of states\n  //\n\n  @state win-width.small {\n    @state win-height.small {\n      @state #modal-opening.opened {\n        ...\n      }\n    }\n  }\n\n  @state win-width.small and win-height.small and #modal-opening.opened {\n    ...\n  }\n\n}\n\n//=======================================\n// \"states-switch\" example\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      small: 1024px,\n      large: null,\n    ),\n  ),\n) {\n\n  @state-switch win-width {\n    @case small {\n      ...\n    }\n\n    @case large {\n      ...\n    }\n  }\n}\n\n//=======================================\n// \"@breakpoints\" example\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      extra-small: 500px,\n      small: 767px,\n      medium: 1024px,\n      large: 1200px,\n      extra-large: null,\n    ),\n  ),\n) {\n\n  //\n  // \"@breakpoints\" can be applied only for \"breakpoints\" states\n  // (win-width or win-height)\n  //\n\n  @breakpoints {\n    @item .small { // from \"extra-small\" to \"small\": [0; 767px]\n      ...\n    }\n\n    @item .medium { // \"medium\" only: [768px;  1024px]\n      ...\n    }\n\n    // Same as: @item null\n    @item .extra-large { // from \"large\" to \"extra-large\": [1025px, +Infinity)\n      ...\n    }\n  }\n\n}\n"], ["\n//=======================================\n// Applying of feature\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states: (\n    small: 1024px,\n    large: null,\n  ),\n) {\n  // Same as: @state @up win-width.small\n  @state @up .small {\n    .test-class { font-weight: bold; }\n  }\n}\n\n// You can also apply feature in any your CSS file\n\n@apply $my-feature {\n  @state @up .small {\n    .test-class { font-weight: bold; }\n  }\n}\n\n// Or use $my-feature states explicitly\n\n// Same as: @state @up $my-feature{win-width.small} {\n@state @up $my-feature{.small} {\n  .test-class { font-weight: bold; }\n}\n\n//=======================================\n// Parallel states example\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      small: 1024px,\n      large: null,\n    ),\n\n    //\n    // Custom state based on window width\n    //\n\n    #right-bar: @win-width-state(\n      hide-right-bar: 1200px,\n      show-right-bar: null,\n    )\n\n    // Both \"win-width\" and \"#right-bar\" states based on window width.\n  ),\n) {\n  ...\n}\n\n//=======================================\n// Example for other types of states\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      small: 1024px,\n      large: null,\n    ),\n\n    win-height: (\n      small: 500px,\n      large: null,\n    ),\n\n    #modal-opening: @selector-state(\n      opened: body.modal--opened,\n\n      closed: body:not(.modal--opened),\n    ),\n  ),\n) {\n\n  //\n  // You can combine selectors for different types of states\n  //\n\n  @state win-width.small {\n    @state win-height.small {\n      @state #modal-opening.opened {\n        ...\n      }\n    }\n  }\n\n  @state win-width.small and win-height.small and #modal-opening.opened {\n    ...\n  }\n\n}\n\n//=======================================\n// \"states-switch\" example\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      small: 1024px,\n      large: null,\n    ),\n  ),\n) {\n\n  @state-switch win-width {\n    @case small {\n      ...\n    }\n\n    @case large {\n      ...\n    }\n  }\n}\n\n//=======================================\n// \"@breakpoints\" example\n//=======================================\n\n$my-feature: @feature(\n  parent: null,\n  states-ex: (\n    win-width: (\n      extra-small: 500px,\n      small: 767px,\n      medium: 1024px,\n      large: 1200px,\n      extra-large: null,\n    ),\n  ),\n) {\n\n  //\n  // \"@breakpoints\" can be applied only for \"breakpoints\" states\n  // (win-width or win-height)\n  //\n\n  @breakpoints {\n    @item .small { // from \"extra-small\" to \"small\": [0; 767px]\n      ...\n    }\n\n    @item .medium { // \"medium\" only: [768px;  1024px]\n      ...\n    }\n\n    // Same as: @item null\n    @item .extra-large { // from \"large\" to \"extra-large\": [1025px, +Infinity)\n      ...\n    }\n  }\n\n}\n"]))));
+var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./src/app/user/snippets/items/features-css-example.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/user/snippets/items/features-css-example.ts ***!
+  \*************************************************************/
+/*! exports provided: featuresCssExample */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featuresCssExample", function() { return featuresCssExample; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _shared_models_components_code_snippet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/models/components/code-snippet */ "./src/app/shared/models/components/code-snippet.ts");
+
+
+var featuresCssExample = new _shared_models_components_code_snippet__WEBPACK_IMPORTED_MODULE_1__["CodeSnippetOnScss"](String.raw(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n//=======================================\n// $app-feature: This is global app feature\n//=======================================\n\n$app-feature: @feature(\n  parent: null,\n  states: (\n\n    //\n    // This window width states can be used as app global responsive breakpoints (as in Bootstrap).\n    // You can also add other parallel group of window width states.\n    // You can also add other parallel group of window width states from any other feature and\n    // register this group of states in this feature.\n    // States in any feature can be published in any other feature.\n    // You can access feature states from any other feature.\n    //\n\n    extra-small: 500px,   // window width in range [0; 500px]\n    small: 767px,         // window width in range [501px, 767px]\n    medium: 1024px,       // window width in range [768px, 1024px]\n    large: 1200px,        // window width in range [1025px, 1200px]\n\n    // Last element must be null (i.e. max-width is infinity)\n    extra-large: null,    // window width in range [1201px, Infinity)\n  ),\n\n  // \"states\" this is shortcut for \"states-ex.win-width\".\n  // \"states-ex.win-width\" this is states based on window width.\n  // Instead of \"states\" you can write:\n  //   states-ex: {\n  //     win-width: (\n  //       ...\n  //     ),\n  //   }\n);\n\n//=======================================\n// $side-menu-feature: This is side menu feature\n//=======================================\n\n$side-menu-feature: @feature(\n  parent: $app-feature,\n  states-ex: (\n\n    //\n    // \"win-width\" is system states group based on window width\n    //\n\n    win-width: (\n      toggleable: $app-feature{medium} (    // i.e. {extra-small}, {small} and {medium}\n        vars: (\n          side-width: 80%,\n        ),\n      ),\n\n      fixed-small: $app-feature{large} (    // i.e. {large}\n        vars: (\n          side-width: 300px,\n        ),\n      ),\n\n      // Last breakpoint must be null (i.e. max-width is infinity)\n      // You can write also:\n      //   fixed-large: $app-feature{extra-large}\n      // because $app-feature{extra-large} also is last breakpoint and therefore it also equals to null\n      fixed-large: null (    // i.e. {extra-large}\n        vars: (\n          side-width: 400px,\n        ),\n      ),\n    ),\n\n    //\n    // Create custom state group #opening\n    // Name of custom states group must starts with #\n    //\n\n    #opening: @selector-state( // States\n      opened: body.side-menu--opened,\n\n      closed: body:not(.side-menu--opened),\n    ) ( // Options\n      // Publish this state in $app-feature\n      publish: $app-feature{#side-menu-opening},\n          // And now you can access this state from $app-feature in your any CSS file:\n          //   @state $app-feature{#side-menu-opening.opened} {\n          //     .my-item {\n          //       font-weight: bold;\n          //     }\n          //   }\n    ),\n\n  ),\n) {\n  .side-menu {\n    background-color: #fff;\n  }\n\n  .side-menu-overlay {\n    position: relative;\n    opacity: 0.5;\n    color: #444;\n  }\n\n  // Same as: @state win-width.toggleable\n  @state .toggleable {\n    @state #opening.opened {\n      .side-menu {\n        width: @var [side-width];\n          // Same as: @var win-width[side-width]\n          // It takes \"width\" variable from current win-width state (win-width.toggleable)\n          // You can take variable from other current state: @var #opening[my-var]\n          // Or from other not current but explicit state: @var #opening.closed[my-var]\n      }\n\n      .side-menu-overlay {\n        z-index: 100;\n      }\n\n      .main-content {\n        margin-left: @var [side-width];\n        width: 100%;\n      }\n    }\n\n    @state #opening.closed {\n      .side-menu,\n      .side-menu-overlay {\n        display: none;\n      }\n\n      .side-menu-overlay {\n        z-index: -100;\n      }\n    }\n  }\n\n  // Same as: @state @up win-width.small\n  // Same as: @state win-width(fixed-small, fixed-large)\n  // Same as: @state .(fixed-small, fixed-large)\n  @state @up .fixed-small {\n    .side-menu {\n      position: fixed;\n      left: 0;\n      width: @var [side-width]; // side-width equals to 300px for fixed-small and 400px for fixed-large\n      top: 0;\n      bottom: 0;\n    }\n\n    .main-content {\n      margin-left: @var [side-width];\n      width: calc(100% - @var [side-width]);\n    }\n  }\n}\n\n//=======================================\n// $side-menu-item-feature\n//=======================================\n\n$side-menu-item-feature: @feature(\n  parent: $side-menu-feature,\n  states: (\n    toggleable: @parent{toggleable} => item-large,\n    fixed-small: @parent{fixed-small} => item-small,\n    fixed-large: @parent{fixed-large} => item-large,\n      // You can use readble state names \"item-small\" or \"item-large\" instead of unreadble\n      // global app states $app-feature{extra-small}, $app-feature{small}.\n      // $app-feature{...} states unreadble in context of side-menu-item\n      // because $app-feature{...} states based on the browser width\n      // and therefore $app-feature{...} state names semantic based on browser width\n      // and therefore $app-feature{...} state names is unreadble in context of side-menu-item\n\n    //\n    // or\n    //\n\n    // If toggleable side-menu has width in percentage of screen\n    // and therefore side-menu width is proportional to the browser window width\n    // then we can do the following:\n    toggleable-small: @parent{{toggleable, 720px}} => item-small,\n      // @parent{{toggleable, 720px}} takes 720px and ensures\n      // that 720px is in \"toggleable\" window width range.\n      // Otherwise compilation error occured.\n    toggleable-large: @parent{toggleable} => item-large,\n      // or:\n      //   toggleable-small: @parent{{toggleable, 70%}} => item-small,\n      //   toggleable-large: @parent{toggleable} => item-large,\n      //\n      // @parent{toggleable} (@side-menu-feature{toggleable}) has such rule:\n      //   browser-width in range [0px, 1024px]\n      //\n      // Since the width of the side-menu is proportional to the width of the browser window,\n      // we know that for small browser widths the menu is narrow (therefore menu item is small),\n      // and for large browser widths the menu is wide (therefore menu item is large).\n      //\n      // But also we can implement \"side-menu-item\" state depends not from browser width value,\n      // but depends from \"side-menu-item\" element width value using \"Features CSS JS Ext\"\n      //\n\n    fixed-small: @parent{fixed-small} => item-small,\n    fixed-large: @parent{fixed-large} => item-large,\n  ),\n) {\n  // This causes compilation error.\n  // Use {item-small} or {item-large} states.\n  @state .toggleable {}\n\n  // This is works\n  @state .item-small {\n  }\n  @state .item-large {\n  }\n}\n\n//=======================================\n// $side-menu-item-sub-element-feature\n//=======================================\n\n$side-menu-item-sub-element-feature: @feature(\n  parent: $side-menu-item-feature,\n  states: @parent.states,\n) {\n  @state .item-small {\n    ...\n  }\n\n  @state .item-large {\n    ...\n  }\n}"], ["\n//=======================================\n// $app-feature: This is global app feature\n//=======================================\n\n$app-feature: @feature(\n  parent: null,\n  states: (\n\n    //\n    // This window width states can be used as app global responsive breakpoints (as in Bootstrap).\n    // You can also add other parallel group of window width states.\n    // You can also add other parallel group of window width states from any other feature and\n    // register this group of states in this feature.\n    // States in any feature can be published in any other feature.\n    // You can access feature states from any other feature.\n    //\n\n    extra-small: 500px,   // window width in range [0; 500px]\n    small: 767px,         // window width in range [501px, 767px]\n    medium: 1024px,       // window width in range [768px, 1024px]\n    large: 1200px,        // window width in range [1025px, 1200px]\n\n    // Last element must be null (i.e. max-width is infinity)\n    extra-large: null,    // window width in range [1201px, Infinity)\n  ),\n\n  // \"states\" this is shortcut for \"states-ex.win-width\".\n  // \"states-ex.win-width\" this is states based on window width.\n  // Instead of \"states\" you can write:\n  //   states-ex: {\n  //     win-width: (\n  //       ...\n  //     ),\n  //   }\n);\n\n//=======================================\n// $side-menu-feature: This is side menu feature\n//=======================================\n\n$side-menu-feature: @feature(\n  parent: $app-feature,\n  states-ex: (\n\n    //\n    // \"win-width\" is system states group based on window width\n    //\n\n    win-width: (\n      toggleable: $app-feature{medium} (    // i.e. {extra-small}, {small} and {medium}\n        vars: (\n          side-width: 80%,\n        ),\n      ),\n\n      fixed-small: $app-feature{large} (    // i.e. {large}\n        vars: (\n          side-width: 300px,\n        ),\n      ),\n\n      // Last breakpoint must be null (i.e. max-width is infinity)\n      // You can write also:\n      //   fixed-large: $app-feature{extra-large}\n      // because $app-feature{extra-large} also is last breakpoint and therefore it also equals to null\n      fixed-large: null (    // i.e. {extra-large}\n        vars: (\n          side-width: 400px,\n        ),\n      ),\n    ),\n\n    //\n    // Create custom state group #opening\n    // Name of custom states group must starts with #\n    //\n\n    #opening: @selector-state( // States\n      opened: body.side-menu--opened,\n\n      closed: body:not(.side-menu--opened),\n    ) ( // Options\n      // Publish this state in $app-feature\n      publish: $app-feature{#side-menu-opening},\n          // And now you can access this state from $app-feature in your any CSS file:\n          //   @state $app-feature{#side-menu-opening.opened} {\n          //     .my-item {\n          //       font-weight: bold;\n          //     }\n          //   }\n    ),\n\n  ),\n) {\n  .side-menu {\n    background-color: #fff;\n  }\n\n  .side-menu-overlay {\n    position: relative;\n    opacity: 0.5;\n    color: #444;\n  }\n\n  // Same as: @state win-width.toggleable\n  @state .toggleable {\n    @state #opening.opened {\n      .side-menu {\n        width: @var [side-width];\n          // Same as: @var win-width[side-width]\n          // It takes \"width\" variable from current win-width state (win-width.toggleable)\n          // You can take variable from other current state: @var #opening[my-var]\n          // Or from other not current but explicit state: @var #opening.closed[my-var]\n      }\n\n      .side-menu-overlay {\n        z-index: 100;\n      }\n\n      .main-content {\n        margin-left: @var [side-width];\n        width: 100%;\n      }\n    }\n\n    @state #opening.closed {\n      .side-menu,\n      .side-menu-overlay {\n        display: none;\n      }\n\n      .side-menu-overlay {\n        z-index: -100;\n      }\n    }\n  }\n\n  // Same as: @state @up win-width.small\n  // Same as: @state win-width(fixed-small, fixed-large)\n  // Same as: @state .(fixed-small, fixed-large)\n  @state @up .fixed-small {\n    .side-menu {\n      position: fixed;\n      left: 0;\n      width: @var [side-width]; // side-width equals to 300px for fixed-small and 400px for fixed-large\n      top: 0;\n      bottom: 0;\n    }\n\n    .main-content {\n      margin-left: @var [side-width];\n      width: calc(100% - @var [side-width]);\n    }\n  }\n}\n\n//=======================================\n// $side-menu-item-feature\n//=======================================\n\n$side-menu-item-feature: @feature(\n  parent: $side-menu-feature,\n  states: (\n    toggleable: @parent{toggleable} => item-large,\n    fixed-small: @parent{fixed-small} => item-small,\n    fixed-large: @parent{fixed-large} => item-large,\n      // You can use readble state names \"item-small\" or \"item-large\" instead of unreadble\n      // global app states $app-feature{extra-small}, $app-feature{small}.\n      // $app-feature{...} states unreadble in context of side-menu-item\n      // because $app-feature{...} states based on the browser width\n      // and therefore $app-feature{...} state names semantic based on browser width\n      // and therefore $app-feature{...} state names is unreadble in context of side-menu-item\n\n    //\n    // or\n    //\n\n    // If toggleable side-menu has width in percentage of screen\n    // and therefore side-menu width is proportional to the browser window width\n    // then we can do the following:\n    toggleable-small: @parent{{toggleable, 720px}} => item-small,\n      // @parent{{toggleable, 720px}} takes 720px and ensures\n      // that 720px is in \"toggleable\" window width range.\n      // Otherwise compilation error occured.\n    toggleable-large: @parent{toggleable} => item-large,\n      // or:\n      //   toggleable-small: @parent{{toggleable, 70%}} => item-small,\n      //   toggleable-large: @parent{toggleable} => item-large,\n      //\n      // @parent{toggleable} (@side-menu-feature{toggleable}) has such rule:\n      //   browser-width in range [0px, 1024px]\n      //\n      // Since the width of the side-menu is proportional to the width of the browser window,\n      // we know that for small browser widths the menu is narrow (therefore menu item is small),\n      // and for large browser widths the menu is wide (therefore menu item is large).\n      //\n      // But also we can implement \"side-menu-item\" state depends not from browser width value,\n      // but depends from \"side-menu-item\" element width value using \"Features CSS JS Ext\"\n      //\n\n    fixed-small: @parent{fixed-small} => item-small,\n    fixed-large: @parent{fixed-large} => item-large,\n  ),\n) {\n  // This causes compilation error.\n  // Use {item-small} or {item-large} states.\n  @state .toggleable {}\n\n  // This is works\n  @state .item-small {\n  }\n  @state .item-large {\n  }\n}\n\n//=======================================\n// $side-menu-item-sub-element-feature\n//=======================================\n\n$side-menu-item-sub-element-feature: @feature(\n  parent: $side-menu-item-feature,\n  states: @parent.states,\n) {\n  @state .item-small {\n    ...\n  }\n\n  @state .item-large {\n    ...\n  }\n}"]))));
+var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./src/app/user/snippets/items/features-css-js-ext-example.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/user/snippets/items/features-css-js-ext-example.ts ***!
+  \********************************************************************/
+/*! exports provided: featuresCssJsExtExample */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featuresCssJsExtExample", function() { return featuresCssJsExtExample; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _shared_models_components_code_snippet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/models/components/code-snippet */ "./src/app/shared/models/components/code-snippet.ts");
+
+
+var featuresCssJsExtExample = new _shared_models_components_code_snippet__WEBPACK_IMPORTED_MODULE_1__["CodeSnippetOnScss"](String.raw(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n$side-menu-item-feature: @feature(\n  parent: null,\n  states-ex: (\n    #item-width: @element-width-state(\n      selector: '.item-root',\n      states: (\n        small: 300px,\n        medium: 400px,\n        large: null,\n      ),\n    ),\n  ),\n) {\n\n  @state #item-width.small {\n    .item-icon {\n      display: none;\n    }\n  }\n\n}"], ["\n$side-menu-item-feature: @feature(\n  parent: null,\n  states-ex: (\n    #item-width: @element-width-state(\n      selector: '.item-root',\n      states: (\n        small: 300px,\n        medium: 400px,\n        large: null,\n      ),\n    ),\n  ),\n) {\n\n  @state #item-width.small {\n    .item-icon {\n      display: none;\n    }\n  }\n\n}"]))));
+var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./src/app/user/user-routing.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/user/user-routing.module.ts ***!
+  \*********************************************/
+/*! exports provided: UserModuleUrls, UserRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModuleUrls", function() { return UserModuleUrls; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRoutingModule", function() { return UserRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _containers_about_features_css_container_about_features_css_container_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./containers/about-features-css-container/about-features-css-container.component */ "./src/app/user/containers/about-features-css-container/about-features-css-container.component.ts");
+/* harmony import */ var _containers_features_css_team_container_features_css_team_container_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./containers/features-css-team-container/features-css-team-container.component */ "./src/app/user/containers/features-css-team-container/features-css-team-container.component.ts");
+/* harmony import */ var _containers_about_save_project_container_about_save_project_container_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/about-save-project-container/about-save-project-container.component */ "./src/app/user/containers/about-save-project-container/about-save-project-container.component.ts");
+/* harmony import */ var _containers_save_team_container_save_team_container_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./containers/save-team-container/save-team-container.component */ "./src/app/user/containers/save-team-container/save-team-container.component.ts");
+/* harmony import */ var _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/logic/module-urls */ "./src/app/shared/logic/module-urls.ts");
+
+
+
+
+
+
+
+
+//
+// Urls class
+//
+var UserModuleUrls = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](UserModuleUrls, _super);
+    function UserModuleUrls() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.aboutFeaturesCss = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'about-features-css');
+        _this.featuresCssTeam = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'features-css-team');
+        _this.aboutSaveProject = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'about-save-project');
+        _this.saveTeam = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'save-team');
+        return _this;
+    }
+    return UserModuleUrls;
+}(_shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrls"]));
+
+//
+// Relative urls
+//
+var relativeUrls = new UserModuleUrls(new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsRelativeContext"]());
+//
+// Routes
+//
+var routes = [
+    {
+        path: relativeUrls.aboutFeaturesCss.url,
+        component: _containers_about_features_css_container_about_features_css_container_component__WEBPACK_IMPORTED_MODULE_3__["AboutFeaturesCssContainerComponent"],
+    },
+    {
+        path: relativeUrls.featuresCssTeam.url,
+        component: _containers_features_css_team_container_features_css_team_container_component__WEBPACK_IMPORTED_MODULE_4__["FeaturesCssTeamContainerComponent"],
+    },
+    {
+        path: relativeUrls.aboutSaveProject.url,
+        component: _containers_about_save_project_container_about_save_project_container_component__WEBPACK_IMPORTED_MODULE_5__["AboutSaveProjectContainerComponent"],
+    },
+    {
+        path: relativeUrls.saveTeam.url,
+        component: _containers_save_team_container_save_team_container_component__WEBPACK_IMPORTED_MODULE_6__["SaveTeamContainerComponent"],
+    },
+    {
+        path: '**',
+        redirectTo: relativeUrls.aboutFeaturesCss.url,
+    },
+];
+//
+// Module
+//
+var UserRoutingModule = /** @class */ (function () {
+    function UserRoutingModule() {
+    }
+    UserRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        })
+    ], UserRoutingModule);
+    return UserRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/user.module.ts":
+/*!*************************************!*\
+  !*** ./src/app/user/user.module.ts ***!
+  \*************************************/
+/*! exports provided: UserModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return UserModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _user_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-routing.module */ "./src/app/user/user-routing.module.ts");
+/* harmony import */ var _containers_features_css_team_container_features_css_team_container_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/features-css-team-container/features-css-team-container.component */ "./src/app/user/containers/features-css-team-container/features-css-team-container.component.ts");
+/* harmony import */ var _containers_save_team_container_save_team_container_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./containers/save-team-container/save-team-container.component */ "./src/app/user/containers/save-team-container/save-team-container.component.ts");
+/* harmony import */ var _containers_about_features_css_container_about_features_css_container_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./containers/about-features-css-container/about-features-css-container.component */ "./src/app/user/containers/about-features-css-container/about-features-css-container.component.ts");
+/* harmony import */ var _containers_about_save_project_container_about_save_project_container_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/about-save-project-container/about-save-project-container.component */ "./src/app/user/containers/about-save-project-container/about-save-project-container.component.ts");
+/* harmony import */ var _components_please_help_me_please_help_me_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/please-help-me/please-help-me.component */ "./src/app/user/components/please-help-me/please-help-me.component.ts");
+
+
+
+
+
+
+
+
+
+
+var UserModule = /** @class */ (function () {
+    function UserModule() {
+    }
+    UserModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _shared_shared_module__WEBPACK_IMPORTED_MODULE_3__["SharedModule"],
+                _user_routing_module__WEBPACK_IMPORTED_MODULE_4__["UserRoutingModule"],
+            ],
+            declarations: [
+                _containers_features_css_team_container_features_css_team_container_component__WEBPACK_IMPORTED_MODULE_5__["FeaturesCssTeamContainerComponent"],
+                _containers_save_team_container_save_team_container_component__WEBPACK_IMPORTED_MODULE_6__["SaveTeamContainerComponent"],
+                _containers_about_features_css_container_about_features_css_container_component__WEBPACK_IMPORTED_MODULE_7__["AboutFeaturesCssContainerComponent"],
+                _containers_about_save_project_container_about_save_project_container_component__WEBPACK_IMPORTED_MODULE_8__["AboutSaveProjectContainerComponent"],
+                _components_please_help_me_please_help_me_component__WEBPACK_IMPORTED_MODULE_9__["PleaseHelpMeComponent"],
+            ],
+            exports: [
+                _components_please_help_me_please_help_me_component__WEBPACK_IMPORTED_MODULE_9__["PleaseHelpMeComponent"],
+            ],
+        })
+    ], UserModule);
+    return UserModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/environments/environment.ts":
+/*!*****************************************!*\
+  !*** ./src/environments/environment.ts ***!
+  \*****************************************/
+/*! exports provided: environment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+var environment = {
+    production: false
+};
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "./src/main.ts":
+/*!*********************!*\
+  !*** ./src/main.ts ***!
+  \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+}
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+    .catch(function (err) { return console.error(err); });
+
+
+/***/ }),
+
+/***/ 0:
+/*!***************************!*\
+  !*** multi ./src/main.ts ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /Users/admin/Documents/Projects/features-css-site/src/main.ts */"./src/main.ts");
+
+
+/***/ })
+
+},[[0,"runtime","vendor"]]]);
+//# sourceMappingURL=main-es5.js.map
