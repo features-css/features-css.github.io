@@ -38,7 +38,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--\n  \"Help me\" modal\n-->\n\n<app-modal\n  #pleaseHelpMeModal\n  [title]=\"[\n    'Please help me and my animals.',\n    'We have not money to eat...'\n  ]\"\n>\n  <app-please-help-me></app-please-help-me>\n</app-modal>\n\n<!--\n  Page\n-->\n\n<nav id=\"id-top-navbar\" class=\"navbar navbar-expand navbar-dark bg-primary\">\n  <div class=\"container\">\n    <div class=\"d-flex flex-row\">\n\n      <div *ngFor=\"let linkGroup of navbarLinkGroups\">\n        <app-navbar-link-group [linkGroup]=\"linkGroup\"></app-navbar-link-group>\n      </div>\n\n    </div>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n\n<nav id=\"id-bottom-navbar\" class=\"navbar fixed-bottom navbar-light\" style=\"background-color: #e3f2fd;\">\n  <a class=\"navbar-brand mx-2\">Please help me and my animals. <br class=\"d-block d-sm-none\">We have not money to eat...</a>\n  <form class=\"form-inline mx-2\">\n    <button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onClickDonateMeAndMyAnimals($event)\">\n      Please donate us...\n    </button>\n  </form>\n</nav>"
+module.exports = "<!--\n  \"Help me\" modal\n-->\n\n<app-modal\n  #pleaseHelpMeModal\n  [title]=\"[\n    'Please help me and my animals.',\n    'We have not money to eat...'\n  ]\"\n>\n  <app-please-help-me></app-please-help-me>\n</app-modal>\n\n<!--\n  Page\n-->\n\n<nav id=\"id-top-navbar\" class=\"navbar navbar-expand navbar-dark bg-success\">\n  <div class=\"container\">\n    <div class=\"d-flex flex-row align-items-center in-navbar-row\">\n\n      <a class=\"navbar-brand\" href=\"javascript:void(0);\">\n        Features CSS\n      </a>\n\n      <div *ngFor=\"let linkGroup of navbarLinkGroups\">\n        <app-navbar-link-group [linkGroup]=\"linkGroup\"></app-navbar-link-group>\n      </div>\n\n      <div class=\"gl-social-share-begin\"></div>\n      <div\n        [attr.data-href]=\"shareUrl\"\n        class=\"fb-like\"\n        data-width=\"\"\n        data-layout=\"button_count\"\n        data-action=\"like\"\n        data-size=\"large\"\n        data-show-faces=\"true\"\n        data-share=\"true\"></div>\n      <div class=\"gl-social-share-separator--horizontal\"></div>\n      <a\n        [attr.href]=\"shareUrl\"\n        [attr.data-text]=\"shareTitle\"\n        [attr.data-hashtags]=\"shareTags\"\n        class=\"twitter-share-button\"\n        data-size=\"large\"\n        data-show-count=\"true\">Tweet</a>\n      <div class=\"gl-social-share-narrow-list\">\n        <div\n          [attr.data-href]=\"shareUrl\"\n          class=\"fb-like\"\n          data-width=\"\"\n          data-layout=\"button_count\"\n          data-action=\"like\"\n          data-size=\"large\"\n          data-show-faces=\"true\"\n          data-share=\"false\"></div>\n        <div class=\"gl-social-share-separator--vertical\"><br></div>\n        <a\n          [attr.href]=\"shareUrl\"\n          [attr.data-text]=\"shareTitle\"\n          [attr.data-hashtags]=\"shareTags\"\n          class=\"twitter-share-button\"\n          data-size=\"large\"\n          data-show-count=\"true\">Tweet</a>\n      </div>\n\n    </div>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n\n<nav id=\"id-bottom-navbar\" class=\"navbar fixed-bottom navbar-light\" style=\"background-color: #e3f2fd; height: 0;\">\n  <a class=\"navbar-brand mx-2\">Please help me and my animals. <br class=\"d-block d-sm-none\">We have not money to eat...</a>\n  <form class=\"form-inline mx-2\">\n    <button type=\"button\" class=\"btn btn-outline-success\" (click)=\"onClickDonateMeAndMyAnimals($event)\">\n      Please donate us...\n    </button>\n  </form>\n</nav>"
 
 /***/ }),
 
@@ -60,7 +60,7 @@ module.exports = "<ng-template [ngIf]=\"snippet\">\n  <ngx-prism [language]=\"sn
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template #content let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">\n      <span [innerHTML]=\"titleAsHtml\"></span>\n    </h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"mr-auto btn btn-outline-primary in-please-donate-us-btn\" disabled>\n      Please donate us...\n    </button>\n    <button type=\"button\" class=\"btn btn-light\" (click)=\"modal.close('Close click')\">\n      Close\n    </button>\n  </div>\n</ng-template>"
+module.exports = "<ng-template #content let-modal>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title\">\n      <span [innerHTML]=\"titleAsHtml\"></span>\n    </h4>\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"modal.dismiss('Cross click')\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    <ng-content></ng-content>\n  </div>\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"mr-auto btn btn-success\" (click)=\"onClickDonateUs()\">\n      Please donate us...\n    </button>\n    <button type=\"button\" class=\"btn btn-light\" (click)=\"modal.close('Close click')\">\n      Close\n    </button>\n  </div>\n</ng-template>"
 
 /***/ }),
 
@@ -115,7 +115,7 @@ module.exports = "<h1 class=\"gl-page-title\"><ng-content></ng-content></h1>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngIf]=\"checker.isString(textItem)\">\n  {{ textItem }}\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isItem(textItem)\">\n  <ng-template [ngIf]=\"textItem.icon\">\n    <i [class]=\"iconClass\" [ngStyle]=\"{ 'font-size.em': iconScale }\"></i>\n  </ng-template>\n  <ng-template [ngIf]=\"textItem.text\">\n    {{textItem.text}}\n  </ng-template>\n</ng-template>"
+module.exports = "<ng-template [ngIf]=\"checker.isString(textItem)\">\n  {{ textItem }}\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isItem(textItem)\">\n  <ng-template [ngIf]=\"textItem_icon\">\n    <i [class]=\"iconClass\" [ngStyle]=\"{ 'font-size.em': iconScale }\"></i>\n  </ng-template>\n  <ng-template [ngIf]=\"textItem_text\">\n    {{ textItem_text }}\n  </ng-template>\n</ng-template>"
 
 /***/ }),
 
@@ -126,7 +126,7 @@ module.exports = "<ng-template [ngIf]=\"checker.isString(textItem)\">\n  {{ text
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-template [ngIf]=\"checker.isString(text)\">\n  {{ text }}\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isItem(text)\">\n  <app-resp-text-item [textItem]=\"text\"></app-resp-text-item>\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isText(text)\">\n  <div class=\"d-none d-sm-block\">\n    <app-resp-text-item [textItem]=\"text.text\"></app-resp-text-item>\n  </div>\n  <div class=\"d-block d-sm-none\">\n    <app-resp-text-item [textItem]=\"text.smallText\"></app-resp-text-item>\n  </div>\n</ng-template>"
+module.exports = "<ng-template [ngIf]=\"checker.isString(text)\">\n  {{ text }}\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isItem(text)\">\n  <app-resp-text-item [textItem]=\"text\"></app-resp-text-item>\n</ng-template>\n\n<ng-template [ngIf]=\"checker.isText(text)\">\n  <div class=\"d-none d-sm-block\">\n    <app-resp-text-item [textItem]=\"text_text\"></app-resp-text-item>\n  </div>\n  <div class=\"d-block d-sm-none\">\n    <app-resp-text-item [textItem]=\"text_smallText\"></app-resp-text-item>\n  </div>\n</ng-template>"
 
 /***/ }),
 
@@ -137,7 +137,7 @@ module.exports = "<ng-template [ngIf]=\"checker.isString(text)\">\n  {{ text }}\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  Hello, I’ve been a volunteer zoodefender for almost 2 years and I live in Russia. I am writing in despair asking for help.\n</p>\n\n<p>\n  I came up with the CSS \"Features CSS\" preprocessor just to get the attention of programmers. Because I really need help.\n</p>\n\n<p>\n  I am a livestock volunteer and take homeless animals from the street, because it is very difficult for homeless animals to live on the street without a home. In Ulan-Ude, Russia, most of the homeless animals on the streets die. They die due to trapping animals, or without food from starvation (only a small part of homeless animals can learn to find food and survive), or die in winter from the cold (if they do not find time to eat food to warm themselves). I take animals from the street to save them from such a terrible fate. I also feed homeless animals in the streets.\n</p>\n\n<p>\n  In recent months, I picked up a lot of animals from the street, did not calculate my money needed for food for my selected animals and animals, which I feed on the streets, and got into debt. Now I have 74 animals picked from the street, and still homeless animals in the streets that I feed. In a few days I’ll run out of money to feed all of my animals - and those picked up from the street, and homeless animals. In addition, I do not have money to repay the debts that I took, because I did not have enough money for animals. This is a mini loan and a loan from a private lender. And I am accumulating interest for the delay in these debts, and the amount of debts is growing rapidly. My animals and I will soon be left without food. I beg you to help me with my animals. Without you, we won’t get out.\n</p>\n\n<p>\n  I live in Russia in the city of Ulan-Ude and work as a programmer. I spend only a minimum of money on myself. And I spend all the rest of the money on feeding my animals picked up from the street. As well as feeding homeless animals living on the streets, for which I have no place (these animals are many). I want to find work abroad and build an animal shelter and pick up these animals from the street, for which I still have no place, and also pick up a lot of other animals from the street.\n</p>\n\n<p>\n  Now I have 39 teenage puppies whom I took from the street as young puppies, and now they are already the size of adult dogs. I also have 3 dogs, which I took from the street as adults. I also have 27 teenage kittens, which I also took from the street with still small kittens, and now they have also grown in size as adult cats. And I also have 5 cats, which I took from the street as adults.\n</p>\n\n<p>\n  In the past few months, I have taken a lot of animals from the street. I took them from the street because I could not pass by. In Ulan-Ude, most of the homeless animals on the streets die. They die either from capturing animals, or from hunger, or from cold in winter, because they could not find food and warm themselves. Homeless animals are very ill on the street, most of them die, and those who survived live a painful life on the street. Therefore, I could not pass by, and in recent months I took a lot of animals from the street, more than I can afford. I got more animals and I did not have enough money to feed them. Therefore, I took several mini-loans so that I had enough money to eat my animals.\n</p>\n\n<p>\n  And 2 months ago, some small puppies from recently selected puppies that were sitting in the same enclosure fell ill with enteritis (enteritis is a deadly disease in puppies, this disease has a very high mortality rate). I took the puppies to a veterinary clinic for treatment in a hospital, and in order to pay for treatment, I borrowed 60 thousand rubles (this is $ 937.75 at the dollar rate on Google) from a private lender at high interest rates, because mini-loans I haven’t been given out to the moment, since my previous mini-loans have not yet been closed. I had to return 2 times more, and in case of delay in repayment of the debt, a large interest on the debt was accrued. I gave part of the borrowed money for treatment of puppies to the clinic, and part of it was spent on food for my other animals. Because by that time I already had a lot of money for food and my chosen animals, and homeless animals on the streets of which I care. I needed to pay high interest for mini-loans, in Russia in Russia interest for mini-loans is 1-1.5 percent per day. Therefore, by that time, my animals didn’t just have enough money for food, but not enough.\n</p>\n\n<p>\n  In the veterinary clinic, most of the puppies were cured, but some died (unti-smile). When I took the puppies from the clinic back to my home, after some time the same puppies from the same enclosure again got enteritis. But I already didn’t have the money to give the puppies for treatment to the clinic in the hospital. I treated them at home myself, put antibiotics and droppers, but all the puppies died. There were 5 puppies who died.\n</p>\n\n<p>\n  At the same time, I was looking for work abroad (abroad, the programmer’s salary is much higher than in Russia), so that I would have enough money to feed and help animals; and to close their debts, which are growing rapidly every day due to interest and delay.\n</p>\n\n<p>\n  I also saw homeless puppies and kittens in different places on the street. And really wanted to pick them up from the street. I wrote down, so as not to forget, the places where I saw these puppies and kittens, to pick them up from the street when I find work abroad. In total, I recorded about 20 puppies and kittens. But I still could not find work abroad. A lot of time has passed, probably most of these puppies and kittens have already died or will die soon.\n</p>\n\n<p style=\"color: darkorange;\">\n  <b>\n    In a few days my money will run out with my animals.\n  </b>\n</p>\n<ul>\n  <li>\n    My animals and I need $ 1875.50 for food for the next month. These are my selected animals and the homeless animals that I feed on the streets. I have already asked for a salary ahead of time at work and have spent all of it. On December 3 we will have a salary, but I will not receive it, because I already received it ahead of time and spent all of it. And my animals and I will have nothing to eat in a few days.\n  </li>\n  <li>\n    I need to repay the debt that I took from a private lender. I repaid part of this debt, but could not repay all the debt on time. And because of the delay, the debt has grown and is growing every day. Now I owe 142 thousand rubles for this debt (this is equal to 2219.34 dollars at the dollar rate in Google). And because of the delay, the debt is growing rapidly every day.\n  </li>\n  <li>\n    And I need to repay a debt for several mini-loans - only about 97 thousand rubles (this is equal to $ 1,516.03 at the dollar rate on Google). For these mini-loans, I also have delays and the amount of debt is growing.\n  </li>\n</ul>\n\n<div style=\"border: 1px solid #000; padding: 10px;;\">\n  <p>\n    <b style=\"font-size: 1.2em; color: red;\">\n      Please help us! We won’t get out without you! We need:\n    </b>\n  </p>\n\n  <ol>\n    <li>\n      <b>$ 1875.50</b>\n      <br>\n      Me and my animals for food next month. In a few days we will run out of money!\n    </li>\n    <li>\n      <b>$ 3,735.37</b>\n      <br>\n      To repay my debts, which are now growing every day due to delay.\n    </li>\n  </ol>\n\n  <p>\n    Without your help, my animals and I will have nothing to eat! And the debts will grow to such an amount that I can never close them.\n  </p>\n\n  <p>\n    If you can help us and transfer money to us, then please use \"Western Union\". \"Western Union\" takes interest on the transfer, but transfers to Russia on a plastic card from other countries are prohibited.\n  </p>\n\n  <p>\n    <b>\n      How to transfer money to Russia through \"Western Union\":\n    </b>\n  </p>\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <p>\n      To find how to transfer money through \"Western Union\" to Russia, try to google on these phrases:\n    </p>\n    <ul>\n      <li>\n        western union send money to russia from europe\n      </li>\n      <li>\n        western union send money to russia from usa\n      </li>\n      <li>\n        <i>\n          if you live in a different country, please indicate the same phrase on Google, but with your country\n        </i>\n      </li>\n    </ul>\n    <p>\n      - for me, these phrases did not produce useful results on Google, but maybe this is because I am in Russia, and Google adjusts the search results for different users and countries.\n    </p>\n\n    <p>\n      Or go to the Western Union website and find directly on the website how to transfer money to Russia.\n    </p>\n\n    <p>\n      I know for sure that money transfers through \"Western Union\" to Russia from other countries work. Because at the end of the summer, a friend of mine transferred money to me from USA through Western Union.\n    </p>\n\n    <p>\n      <b>\n        When transferring via \"Western Union\", indicate the following details of the recipient (this is my data):\n      </b>\n    </p>\n\n    <table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">\n      <tr>\n        <td>first name:</td>\n        <td>Igor</td>\n        <td>(in Russian - Игорь)</td>\n      </tr>\n      <tr>\n        <td>middle name:</td>\n        <td>Gennadevich</td>\n        <td>(in Russian - Геннадьевич)</td>\n      </tr>\n      <tr>\n        <td>last name:</td>\n        <td>Shatalov</td>\n        <td>(in Russian - Шаталов)</td>\n      </tr>\n      <tr>\n        <td>phone:</td>\n        <td>+7-983-459-87-93</td>\n        <td></td>\n      </tr>\n      <tr>\n        <td>email:</td>\n        <td>little.foot.2.email@gmail.com</td>\n        <td></td>\n      </tr>\n      <tr>\n        <td colspan=\"3\">\n          And be sure to indicate that the transfer is material assistance.\n        </td>\n      </tr>\n    </table>\n  </div>\n\n  <p>&nbsp;</p>\n  <p>\n    <b>\n      Thank you for your attention to us!\n    </b>\n  </p>\n\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <p>\n      And if you can, then help me with money so that I can pick up those puppies and kittens that I saw on the streets from the street and record them to pick them up when I find work. It has been a long time since I saw them, but I want to pick up those who have not died or fled in search of food. So far I don’t even know how many puppies and kittens are still there, and I can’t say how much money is needed. I will go and look for them, which of these puppies and kittens is still alive or has not fled in search of food, and if I find them, I will write and ask for a donation.\n    </p>\n  \n    <p>\n      If I don’t take these puppies and kittens from the street now, I’ll have to wait until I find work abroad and get my first salary, which is a month or more. During this time, they will surely die there, now we have winter frosts in Ulan-Ude.\n    </p>\n  </div>\n\n  <hr>\n  <hr>\n  <hr>\n  <p style=\"font-size: 1.3em;\">\n    And join the Features CSS team, even if you can't help us! I think the \"Features CSS\" should change the global approach to creating responsive CSS!\n  </p>\n</div>"
+module.exports = "<p>\n  Hello, I’ve been a volunteer zoodefender for almost 2 years and I live in Russia. I am writing in despair asking for help.\n</p>\n\n<p>\n  I came up with the CSS \"Features CSS\" preprocessor just to get the attention of programmers. Because I really need help.\n</p>\n\n<p>\n  I am a livestock volunteer and take homeless animals from the street, because it is very difficult for homeless animals to live on the street without a home. In Ulan-Ude, Russia, most of the homeless animals on the streets die. They die due to trapping animals, or without food from starvation (only a small part of homeless animals can learn to find food and survive), or die in winter from the cold (if they do not find time to eat food to warm themselves). I take animals from the street to save them from such a terrible fate. I also feed homeless animals in the streets.\n</p>\n\n<p>\n  In recent months, I picked up a lot of animals from the street, did not calculate my money needed for food for my selected animals and animals, which I feed on the streets, and got into debt. Now I have 74 animals picked from the street, and still homeless animals in the streets that I feed. In a few days I’ll run out of money to feed all of my animals - and those picked up from the street, and homeless animals. In addition, I do not have money to repay the debts that I took, because I did not have enough money for animals. This is a mini loan and a loan from a private lender. And I am accumulating interest for the delay in these debts, and the amount of debts is growing rapidly. My animals and I will soon be left without food. I beg you to help me with my animals. Without you, we won’t get out.\n</p>\n\n<p>\n  I live in Russia in the city of Ulan-Ude and work as a programmer. I spend only a minimum of money on myself. And I spend all the rest of the money on feeding my animals picked up from the street. As well as feeding homeless animals living on the streets, for which I have no place (these animals are many). I want to find work abroad and build an animal shelter and pick up these animals from the street, for which I still have no place, and also pick up a lot of other animals from the street.\n</p>\n\n<p>\n  Now I have 39 teenage puppies whom I took from the street as young puppies, and now they are already the size of adult dogs. I also have 3 dogs, which I took from the street as adults. I also have 27 teenage kittens, which I also took from the street with still small kittens, and now they have also grown in size as adult cats. And I also have 5 cats, which I took from the street as adults.\n</p>\n\n<p>\n  In the past few months, I have taken a lot of animals from the street. I took them from the street because I could not pass by. In Ulan-Ude, most of the homeless animals on the streets die. They die either from capturing animals, or from hunger, or from cold in winter, because they could not find food and warm themselves. Homeless animals are very ill on the street, most of them die, and those who survived live a painful life on the street. Therefore, I could not pass by, and in recent months I took a lot of animals from the street, more than I can afford. I got more animals and I did not have enough money to feed them. Therefore, I took several mini-loans so that I had enough money to eat my animals.\n</p>\n\n<p>\n  And 2 months ago, some small puppies from recently selected puppies that were sitting in the same enclosure fell ill with enteritis (enteritis is a deadly disease in puppies, this disease has a very high mortality rate). I took the puppies to a veterinary clinic for treatment in a hospital, and in order to pay for treatment, I borrowed 60 thousand rubles (this is $ 937.75 at the dollar rate on Google) from a private lender at high interest rates, because mini-loans I haven’t been given out to the moment, since my previous mini-loans have not yet been closed. I had to return 2 times more, and in case of delay in repayment of the debt, a large interest on the debt was accrued. I gave part of the borrowed money for treatment of puppies to the clinic, and part of it was spent on food for my other animals. Because by that time I already had a lot of money for food and my chosen animals, and homeless animals on the streets of which I care. I needed to pay high interest for mini-loans, in Russia in Russia interest for mini-loans is 1-1.5 percent per day. Therefore, by that time, my animals didn’t just have enough money for food, but not enough.\n</p>\n\n<p>\n  In the veterinary clinic, most of the puppies were cured, but some died (unti-smile). When I took the puppies from the clinic back to my home, after some time the same puppies from the same enclosure again got enteritis. But I already didn’t have the money to give the puppies for treatment to the clinic in the hospital. I treated them at home myself, put antibiotics and droppers, but all the puppies died. There were 5 puppies who died.\n</p>\n\n<p>\n  At the same time, I was looking for work abroad (abroad, the programmer’s salary is much higher than in Russia), so that I would have enough money to feed and help animals; and to close their debts, which are growing rapidly every day due to interest and delay.\n</p>\n\n<p>\n  I also saw homeless puppies and kittens in different places on the street. And really wanted to pick them up from the street. I wrote down, so as not to forget, the places where I saw these puppies and kittens, to pick them up from the street when I find work abroad. In total, I recorded about 20 puppies and kittens. But I still could not find work abroad. A lot of time has passed, probably most of these puppies and kittens have already died or will die soon.\n</p>\n\n<p style=\"color: darkorange;\">\n  <b>\n    In a few days my money will run out with my animals.\n  </b>\n</p>\n<ul>\n  <li>\n    My animals and I need $ 1875.50 for food for the next month. These are my selected animals and the homeless animals that I feed on the streets. I have already asked for a salary ahead of time at work and have spent all of it. On December 3 we will have a salary, but I will not receive it, because I already received it ahead of time and spent all of it. And my animals and I will have nothing to eat in a few days.\n  </li>\n  <li>\n    I need to repay the debt that I took from a private lender. I repaid part of this debt, but could not repay all the debt on time. And because of the delay, the debt has grown and is growing every day. Now I owe 142 thousand rubles for this debt (this is equal to 2219.34 dollars at the dollar rate in Google). And because of the delay, the debt is growing every day by $ 200.\n  </li>\n  <li>\n    And I need to repay a debt for several mini-loans - only about 97 thousand rubles (this is equal to $ 1,516.03 at the dollar rate on Google). For these mini-loans, I also have delays and the amount of debt is growing.\n  </li>\n</ul>\n\n<div style=\"border: 1px solid #000; padding: 10px;;\">\n  <p>\n    <b style=\"font-size: 1.2em; color: red;\">\n      Please help us! We won’t get out without you! We need:\n    </b>\n  </p>\n\n  <ol>\n    <li>\n      <b>$ 1875.50</b>\n      <br>\n      Me and my animals for food next month. In a few days we will run out of money!\n    </li>\n    <li>\n      <b>$ 3,735.37</b>\n      <br>\n      To repay my debts, which are now growing every day due to delay. Now the debt that I took from a private lender is growing every day by $ 200 due to delay ((\n    </li>\n  </ol>\n\n  <p>\n    Without your help, my animals and I will have nothing to eat! And the debts will grow to such an amount that I can never close them.\n  </p>\n\n  <p>\n    If you can help us and transfer money to us, then please use \"Western Union\" (<b>using \"Western Union\" you can send money online from \"Western Union\" site</b>). \"Western Union\" takes percents on the transfer, but \"Western Union\" is almost the only way to transfer money to Russia from the USA or Europe.\n  </p>\n\n  <p>\n    <b>\n      How to transfer money to Russia through \"Western Union\" site online:\n    </b>\n  </p>\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <p>\n      To find how to transfer money through \"Western Union\" to Russia, try to google on these phrases:\n    </p>\n    <ul>\n      <li>\n        western union send money to russia from europe\n      </li>\n      <li>\n        western union send money to russia from usa\n      </li>\n      <li>\n        <i>\n          if you live in a different country, please indicate the same phrase on Google, but with your country\n        </i>\n      </li>\n    </ul>\n    <p>\n      - for me, these phrases did not produce useful results on Google, but maybe this is because I am in Russia, and Google adjusts the search results for different users and countries.\n    </p>\n\n    <p>\n      Or go to the Western Union website and find directly on the website how to transfer money to Russia.\n    </p>\n\n    <p>\n      I know for sure that money transfers through \"Western Union\" to Russia from other countries work. Because at the end of the summer, a friend of mine transferred money to me from USA through Western Union.\n    </p>\n\n    <p id=\"id-donate-us\" name=\"donate-us\">\n      <b>\n        When transferring via \"Western Union\", indicate the following details of the recipient (this is my data):\n      </b>\n    </p>\n\n    <table border=\"1\" cellpadding=\"5\" cellspacing=\"0\" class=\"in-transfer-receiver-table\">\n      <tr>\n        <td class=\"in-receiver-info-title\">first name:</td>\n        <td>\n          <b>Igor</b>\n          <br>\n          (in Russian - <b>Игорь</b>)\n        </td>\n      </tr>\n      <tr>\n        <td class=\"in-receiver-info-title\">middle name:</td>\n        <td>\n          <b>Gennadevich</b>\n          <br>\n          (in Russian - <b>Геннадьевич</b>)\n        </td>\n      </tr>\n      <tr>\n        <td class=\"in-receiver-info-title\">last name:</td>\n        <td>\n          <b>Shatalov</b>\n          <br>\n          (in Russian - <b>Шаталов</b>)\n        </td>\n      </tr>\n      <tr>\n        <td class=\"in-receiver-info-title\">phone:</td>\n        <td><b>+7-983-459-87-93</b></td>\n      </tr>\n      <tr>\n        <td class=\"in-receiver-info-title\">email:</td>\n        <td><b>little.foot.2.email@gmail.com</b></td>\n      </tr>\n      <tr>\n        <td colspan=\"2\">\n          And be sure to indicate that the transfer is material assistance.\n        </td>\n      </tr>\n      <tr>\n        <td colspan=\"2\" style=\"color: red;\">\n          If you transferred money to me, be sure to send me the \"Wester Union\" check/receipt to my email: <b><a href=\"mailto:little.foot.2.email@gmail.com\">little.foot.2.email@gmail.com</a></b>. Without a check/receipt, I won’t know that you transferred money to me.\n        </td>\n      </tr>\n    </table>\n  </div>\n\n  <p>&nbsp;</p>\n  <p>\n    <b>\n      Thank you for your attention to us!\n    </b>\n  </p>\n\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <p>\n      And if you can, then help me with money so that I can pick up those puppies and kittens that I saw on the streets from the street and record them to pick them up when I find work. It has been a long time since I saw them, but I want to pick up those who have not died or fled in search of food. So far I don’t even know how many puppies and kittens are still there, and I can’t say how much money is needed. I will go and look for them, which of these puppies and kittens is still alive or has not fled in search of food, and if I find them, I will write and ask for a donation.\n    </p>\n  \n    <p>\n      If I don’t take these puppies and kittens from the street now, I’ll have to wait until I find work abroad and get my first salary, which is a month or more. During this time, they will surely die there, now we have winter frosts in Ulan-Ude.\n    </p>\n  </div>\n\n  <hr>\n  <hr>\n  <hr>\n\n</div>"
 
 /***/ }),
 
@@ -148,7 +148,7 @@ module.exports = "<p>\n  Hello, I’ve been a volunteer zoodefender for almost 2
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page -->\n<div class=\"container\">\n  <app-page-title>About \"Features CSS\"</app-page-title>\n</div>\n\n<!-- \"Features CSS\" section -->\n<div class=\"container\">\n  <app-page-section-title>\"Features CSS\"</app-page-section-title>\n\n  <p>\n    \"Features CSS\" this is CSS-preprocessor for creating of responsive CSS. Creating responsive CSS as it is now is not very convenient in my opinion. See how \"Features CSS\" makes it easy to create responsive CSS:\n  </p>\n</div>\n\n<!-- \"Features CSS\" example sub-section -->\n<div class=\"container\">\n  <app-page-sub-section-title>\"Features CSS\" example</app-page-sub-section-title>\n\n  <p>\n    For example, we need to create a toggleable sidebar. See how “Features CSS” allows you to conveniently create CSS:\n  </p>\n\n  <app-code-snippet [snippet]=\"snippets.featuresCssExample\"></app-code-snippet>\n</div>\n\n<!-- Additional examples for \"Features CSS\" sub-section -->\n<div class=\"container\">\n  <app-page-sub-section-title>Additional examples for \"Features CSS\"</app-page-sub-section-title>\n\n  <app-code-snippet [snippet]=\"snippets.additionalFeaturesCssExamples\"></app-code-snippet>\n</div>\n\n<!-- \"Features CSS JS Ext\" section -->\n<div class=\"container\">\n  <app-page-section-title>\"Features CSS JS Ext\"</app-page-section-title>\n\n  <p>\n    <b>Problem:</b> Why \"side-menu-item\" view (\"small\" or \"large\") must depends from browser width? In \"toggleable\" state \"side-menu\" can has width greater than in \"fixed\" state, but in \"toggleable\" state browser width is smaller than in \"fixed\" state. In addition, even if the element width is proportional to the browser width, but not equal to the browser width, then standard media queries by browser width will work indirectly. I think the \"side-menu-item\" state (\"small\" or \"large\") must depends from \"side-menu-item\" width. \"Features CSS JS Ext\" can provide such functionality - states by element width/height. And this states by element width/height work very fast, almost at the same speed as standard media queries by the browser width/height. It is only possible that the states by element width/height will lag one frame. But one frame it is very small.\n  </p>\n\n  <p>\n    Using \"Features CSS JS Ext\" you can use states not only by browser width and height, but and by DOM element width and height (states by element size). To use states by element size you your element must meet the one requirement:\n    <br>\n    - The width or height of element must be calculated by formula from browser width and height.\n  </p>\n\n  <p>\n    These requirement is met in almost all UI applications cases where responsiveness is required by element size.\n  </p>\n\n  <p>\n    For states by element width, these requirement is not fulfilled if the element or its parents (on which the width of the element depends) have a width equal to \"auto\". But in most UI applications for such elements with width \"auto\", responsiveness by the width of the element is not required. Agree that it sounds strange to demand responsiveness by the width of the element, if the width of the element is rubber and varies depending on the content of the element. The same for responsiveness by the height of the element: it sounds strange to demand responsiveness by the height of the element, if the height of the element is rubber and varies depending on the content of the element.\n  </p>\n\n  <p>\n    But if you still need to make states by element width/height for an element with a width/height equals to auto, then you can use a different mode for states by element width/height (only this mode is slower). That is, it is still possible to make states by element width/height for rubber elements.\n  </p>\n\n  <app-code-snippet [snippet]=\"snippets.featuresCssJsExtExample\"></app-code-snippet>\n</div>\n\n<hr>\n<hr>\n<hr>\n<div class=\"container\">\n  <div style=\"border: 1px solid #000; padding: 10px; background-color: #eee;\">\n    <b>\n      To join the \"Features CSS\" team to develop the \"Features CSS\" CSS-preprocessor together click the \"Team\" button in Nav Bar on the top of this page!\n    </b>\n  </div>\n</div>\n\n<div class=\"gl-page-bottom\"></div>"
+module.exports = "<!-- Page -->\n<div class=\"container\">\n  <app-page-title>About \"Features CSS\"</app-page-title>\n</div>\n\n<!-- \"Features CSS\" section -->\n<div class=\"container\">\n  <app-page-section-title>\"Features CSS\"</app-page-section-title>\n\n  <p>\n    \"Features CSS\" this is CSS-preprocessor for creating of responsive CSS. Creating responsive CSS as it is now is not very convenient in my opinion. See how \"Features CSS\" makes it easy to create responsive CSS:\n  </p>\n</div>\n\n<!-- \"Features CSS\" example sub-section -->\n<div class=\"container\">\n  <app-page-sub-section-title>\"Features CSS\" example</app-page-sub-section-title>\n\n  <p>\n    For example, we need to create a toggleable sidebar. See how “Features CSS” allows you to conveniently create CSS:\n  </p>\n\n  <app-code-snippet [snippet]=\"snippets.featuresCssExample\"></app-code-snippet>\n</div>\n\n<!-- Additional examples for \"Features CSS\" sub-section -->\n<div class=\"container\">\n  <app-page-sub-section-title>Additional examples for \"Features CSS\"</app-page-sub-section-title>\n\n  <app-code-snippet [snippet]=\"snippets.additionalFeaturesCssExamples\"></app-code-snippet>\n</div>\n\n<!-- \"Features CSS JS Ext\" section -->\n<div class=\"container\">\n  <app-page-section-title>\"Features CSS JS Ext\"</app-page-section-title>\n\n  <p>\n    <b>Problem:</b> Why \"side-menu-item\" view (\"small\" or \"large\") must depends from browser width? In \"toggleable\" state \"side-menu\" can has width greater than in \"fixed\" state, but in \"toggleable\" state browser width is smaller than in \"fixed\" state. In addition, even if the element width is proportional to the browser width, but not equal to the browser width, then standard media queries by browser width will work indirectly. I think the \"side-menu-item\" state (\"small\" or \"large\") must depends from \"side-menu-item\" width. \"Features CSS JS Ext\" can provide such functionality - states by element width/height. And this states by element width/height work very fast, almost at the same speed as standard media queries by the browser width/height. It is only possible that the states by element width/height will lag one frame. But one frame it is very small.\n  </p>\n\n  <p>\n    Using \"Features CSS JS Ext\" you can use states not only by browser width and height, but and by DOM element width and height (states by element size). To use states by element size you your element must meet the one requirement:\n    <br>\n    - The width or height of element must be calculated by formula from browser width and height.\n  </p>\n\n  <p>\n    These requirement is met in almost all UI applications cases where responsiveness is required by element size.\n  </p>\n\n  <p>\n    For states by element width, these requirement is not fulfilled if the element or its parents (on which the width of the element depends) have a width equal to \"auto\". But in most UI applications for such elements with width \"auto\", responsiveness by the width of the element is not required. Agree that it sounds strange to demand responsiveness by the width of the element, if the width of the element is rubber and varies depending on the content of the element. The same for responsiveness by the height of the element: it sounds strange to demand responsiveness by the height of the element, if the height of the element is rubber and varies depending on the content of the element.\n  </p>\n\n  <p>\n    But if you still need to make states by element width/height for an element with a width/height equals to auto, then you can use a different mode for states by element width/height (only this mode is slower). That is, it is still possible to make states by element width/height for rubber elements.\n  </p>\n\n  <app-code-snippet [snippet]=\"snippets.featuresCssJsExtExample\"></app-code-snippet>\n</div>\n\n<!--\n<hr>\n<hr>\n<hr>\n<div class=\"container\">\n  <a class=\"btn btn-success\" routerLink=\"/{{ userRelativeUrls.featuresCssTeam }}\">\n    Join the \"Features CSS\" Team\n  </a>\n</div>\n-->\n\n<div class=\"gl-page-bottom\"></div>"
 
 /***/ }),
 
@@ -189,40 +189,29 @@ module.exports = "<p>save-team-container works!</p>\n"
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
   \***************************************/
-/*! exports provided: absoluteUrls, AppRoutingModule */
+/*! exports provided: AppRoutingModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "absoluteUrls", function() { return absoluteUrls; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/logic/module-urls */ "./src/app/shared/logic/module-urls.ts");
-/* harmony import */ var _user_user_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user/user-routing.module */ "./src/app/user/user-routing.module.ts");
 
 
 
-
-
-//
-// Absolute urls
-//
-var absoluteUrls = {
-    user: new _user_user_routing_module__WEBPACK_IMPORTED_MODULE_4__["UserModuleUrls"](new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_3__["ModuleUrlsAbsoluteContext"]('')),
-};
 //
 // Routes
 //
 var routes = [
     {
-        path: absoluteUrls.user.rootUrlNoSlash(),
+        path: '',
         loadChildren: './user/user.module#UserModule'
     },
     {
         path: '**',
-        redirectTo: absoluteUrls.user.rootUrlNoSlash(),
+        redirectTo: '',
     },
 ];
 //
@@ -251,7 +240,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navbar {\n  padding-top: 0;\n  padding-bottom: 0;\n}\n@media (max-width: 400px) {\n  .navbar {\n    padding-left: 0;\n    padding-right: 0;\n  }\n}\n@media (max-width: 400px) {\n  .in-projects-separator {\n    width: 2px;\n    background-color: #888;\n  }\n}\n@media (min-width: 401px) {\n  .in-projects-separator {\n    width: 30px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFVQTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtBQ1RGO0FEV0U7RUFKRjtJQUtJLGVBQUE7SUFDQSxnQkFBQTtFQ1JGO0FBQ0Y7QURnQkU7RUFERjtJQUVJLFVBQUE7SUFDQSxzQkFBQTtFQ1pGO0FBQ0Y7QURjRTtFQU5GO0lBT0ksV0FBQTtFQ1hGO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL1xuLy8gVmFyc1xuLy9cblxuJHNtYWxsLW1heC13aWR0aDogNDAwcHg7XG5cbi8vXG4vLyBPdmVycmlkZSB0aGlyZC1wYXJ0eVxuLy9cblxuLm5hdmJhciB7XG4gIHBhZGRpbmctdG9wOiAwO1xuICBwYWRkaW5nLWJvdHRvbTogMDtcblxuICBAbWVkaWEgKG1heC13aWR0aDogJHNtYWxsLW1heC13aWR0aCkge1xuICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICBwYWRkaW5nLXJpZ2h0OiAwO1xuICB9XG59XG5cbi8vXG4vLyBUaGlzXG4vL1xuXG4uaW4tcHJvamVjdHMtc2VwYXJhdG9yIHtcbiAgQG1lZGlhIChtYXgtd2lkdGg6ICRzbWFsbC1tYXgtd2lkdGgpIHtcbiAgICB3aWR0aDogMnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM4ODg7XG4gIH1cblxuICBAbWVkaWEgKG1pbi13aWR0aDogJHNtYWxsLW1heC13aWR0aCArIDEpIHtcbiAgICB3aWR0aDogMzBweDtcbiAgfVxufSIsIi5uYXZiYXIge1xuICBwYWRkaW5nLXRvcDogMDtcbiAgcGFkZGluZy1ib3R0b206IDA7XG59XG5AbWVkaWEgKG1heC13aWR0aDogNDAwcHgpIHtcbiAgLm5hdmJhciB7XG4gICAgcGFkZGluZy1sZWZ0OiAwO1xuICAgIHBhZGRpbmctcmlnaHQ6IDA7XG4gIH1cbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDQwMHB4KSB7XG4gIC5pbi1wcm9qZWN0cy1zZXBhcmF0b3Ige1xuICAgIHdpZHRoOiAycHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzg4ODtcbiAgfVxufVxuQG1lZGlhIChtaW4td2lkdGg6IDQwMXB4KSB7XG4gIC5pbi1wcm9qZWN0cy1zZXBhcmF0b3Ige1xuICAgIHdpZHRoOiAzMHB4O1xuICB9XG59Il19 */"
+module.exports = ".navbar {\n  padding-top: 0;\n  padding-bottom: 0;\n}\n@media (max-width: 400px) {\n  .navbar {\n    padding-left: 0;\n    padding-right: 0;\n  }\n}\n@media (max-width: 400px) {\n  .in-projects-separator {\n    width: 2px;\n    background-color: #888;\n  }\n}\n@media (min-width: 401px) {\n  .in-projects-separator {\n    width: 30px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFVQTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtBQ1RGO0FEV0U7RUFKRjtJQUtJLGVBQUE7SUFDQSxnQkFBQTtFQ1JGO0FBQ0Y7QURnQkU7RUFERjtJQUVJLFVBQUE7SUFDQSxzQkFBQTtFQ1pGO0FBQ0Y7QURjRTtFQU5GO0lBT0ksV0FBQTtFQ1hGO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL1xuLy8gVmFyc1xuLy9cblxuJHNtYWxsLW1heC13aWR0aDogNDAwcHg7XG5cbi8vXG4vLyBPdmVycmlkZSB0aGlyZC1wYXJ0eVxuLy9cblxuLm5hdmJhciB7XG4gIHBhZGRpbmctdG9wOiAwO1xuICBwYWRkaW5nLWJvdHRvbTogMDtcblxuICBAbWVkaWEgKG1heC13aWR0aDogJHNtYWxsLW1heC13aWR0aCkge1xuICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICBwYWRkaW5nLXJpZ2h0OiAwO1xuICB9XG59XG5cbi8vXG4vLyBUaGlzXG4vL1xuXG4uaW4tcHJvamVjdHMtc2VwYXJhdG9yIHtcbiAgQG1lZGlhIChtYXgtd2lkdGg6ICRzbWFsbC1tYXgtd2lkdGgpIHtcbiAgICB3aWR0aDogMnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM4ODg7XG4gIH1cblxuICBAbWVkaWEgKG1pbi13aWR0aDogJHNtYWxsLW1heC13aWR0aCArIDEpIHtcbiAgICB3aWR0aDogMzBweDtcbiAgfVxufVxuIiwiLm5hdmJhciB7XG4gIHBhZGRpbmctdG9wOiAwO1xuICBwYWRkaW5nLWJvdHRvbTogMDtcbn1cbkBtZWRpYSAobWF4LXdpZHRoOiA0MDBweCkge1xuICAubmF2YmFyIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XG4gICAgcGFkZGluZy1yaWdodDogMDtcbiAgfVxufVxuXG5AbWVkaWEgKG1heC13aWR0aDogNDAwcHgpIHtcbiAgLmluLXByb2plY3RzLXNlcGFyYXRvciB7XG4gICAgd2lkdGg6IDJweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjODg4O1xuICB9XG59XG5AbWVkaWEgKG1pbi13aWR0aDogNDAxcHgpIHtcbiAgLmluLXByb2plY3RzLXNlcGFyYXRvciB7XG4gICAgd2lkdGg6IDMwcHg7XG4gIH1cbn0iXX0= */"
 
 /***/ }),
 
@@ -267,8 +256,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/models/components/github-link */ "./src/app/shared/models/components/github-link.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prismjs */ "./node_modules/prismjs/prism.js");
+/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prismjs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prismjs_components_prism_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prismjs/components/prism-css */ "./node_modules/prismjs/components/prism-css.js");
+/* harmony import */ var prismjs_components_prism_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prismjs_components_prism_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prismjs/components/prism-scss */ "./node_modules/prismjs/components/prism-scss.js");
+/* harmony import */ var prismjs_components_prism_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/models/components/github-link */ "./src/app/shared/models/components/github-link.ts");
+/* harmony import */ var _user_user_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user/user-routing.module */ "./src/app/user/user-routing.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
 
 
 
@@ -278,13 +278,13 @@ var fcssNavbarLinkGroup = {
     links: [
         {
             text: 'About',
-            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.aboutFeaturesCss.url,
+            url: _user_user_routing_module__WEBPACK_IMPORTED_MODULE_6__["userRelativeUrls"].aboutFeaturesCss,
         },
         {
             text: 'Team',
-            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.featuresCssTeam.url,
+            url: _user_user_routing_module__WEBPACK_IMPORTED_MODULE_6__["userRelativeUrls"].featuresCssTeam,
         },
-        new _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_2__["GitHubLink"]('https://github.com/features-css/features-css'),
+        new _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_5__["GitHubLink"]('https://github.com/features-css/features-css'),
     ],
 };
 var saveProjectLinkGroup = {
@@ -292,23 +292,25 @@ var saveProjectLinkGroup = {
     links: [
         {
             text: 'About',
-            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.aboutSaveProject.url,
+            url: _user_user_routing_module__WEBPACK_IMPORTED_MODULE_6__["userRelativeUrls"].aboutSaveProject,
         },
         {
             text: 'Team',
-            url: _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["absoluteUrls"].user.saveTeam.url,
+            url: _user_user_routing_module__WEBPACK_IMPORTED_MODULE_6__["userRelativeUrls"].saveTeam,
         },
-        new _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_2__["GitHubLink"]('https://github.com/save-team'),
+        new _shared_models_components_github_link__WEBPACK_IMPORTED_MODULE_5__["GitHubLink"]('https://github.com/save-team'),
     ],
 };
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.navbarLinkGroups = [
-            fcssNavbarLinkGroup
-        ];
+        this.shareUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].appUrlNoEndsWithSlash + "/about-features-css";
+        this.shareTitle = 'Hi! Take a look at the Features CSS. This is the next generation CSS-Preprocessor...';
+        this.shareTags = ['features-css'].join(' ');
+        this.navbarLinkGroups = [];
     }
     AppComponent.prototype.ngAfterViewInit = function () {
         var pleaseHelpMeShowedOnce = localStorage.getItem('pleaseHelpMeShowedOnce');
+        pleaseHelpMeShowedOnce = 'true';
         if (!pleaseHelpMeShowedOnce) {
             this.openPleaseHelpMeModal();
             localStorage.setItem('pleaseHelpMeShowedOnce', 'true');
@@ -441,7 +443,7 @@ var CodeSnippetComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".in-please-donate-us-btn {\n  border: none;\n  opacity: 1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC9zaGFyZWQvY29tcG9uZW50cy9tb2RhbC9tb2RhbC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbW9kYWwvbW9kYWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsVUFBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvbW9kYWwvbW9kYWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW4tcGxlYXNlLWRvbmF0ZS11cy1idG4ge1xuICBib3JkZXI6IG5vbmU7XG4gIG9wYWNpdHk6IDE7XG59IiwiLmluLXBsZWFzZS1kb25hdGUtdXMtYnRuIHtcbiAgYm9yZGVyOiBub25lO1xuICBvcGFjaXR5OiAxO1xufSJdfQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL21vZGFsL21vZGFsLmNvbXBvbmVudC5zY3NzIn0= */"
 
 /***/ }),
 
@@ -490,6 +492,10 @@ var ModalComponent = /** @class */ (function () {
         }, function (reason) {
             // Cancel
         });
+    };
+    ModalComponent.prototype.onClickDonateUs = function () {
+        window.location.hash = '#donate-us';
+        document.getElementById('id-donate-us').scrollIntoView();
     };
     ModalComponent.ctorParameters = function () { return [
         { type: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModal"] }
@@ -732,6 +738,20 @@ var RespTextItemComponent = /** @class */ (function () {
         this.checker = checker;
         this.iconChecker = iconChecker;
     }
+    Object.defineProperty(RespTextItemComponent.prototype, "textItem_icon", {
+        get: function () {
+            return this.checker.isItem(this.textItem) ? this.textItem.icon : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RespTextItemComponent.prototype, "textItem_text", {
+        get: function () {
+            return this.checker.isItem(this.textItem) ? this.textItem.text : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(RespTextItemComponent.prototype, "iconClass", {
         get: function () {
             return this.getIconPropertyValue(IconProperty.Icon);
@@ -830,6 +850,20 @@ var RespTextComponent = /** @class */ (function () {
     function RespTextComponent(checker) {
         this.checker = checker;
     }
+    Object.defineProperty(RespTextComponent.prototype, "text_text", {
+        get: function () {
+            return this.checker.isText(this.text) ? this.text.text : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RespTextComponent.prototype, "text_smallText", {
+        get: function () {
+            return this.checker.isText(this.text) ? this.text.smallText : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
     RespTextComponent.prototype.ngOnInit = function () {
     };
     RespTextComponent.ctorParameters = function () { return [
@@ -846,131 +880,6 @@ var RespTextComponent = /** @class */ (function () {
         })
     ], RespTextComponent);
     return RespTextComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/logic/module-urls.ts":
-/*!*********************************************!*\
-  !*** ./src/app/shared/logic/module-urls.ts ***!
-  \*********************************************/
-/*! exports provided: ModuleUrlsRootUrl, ModuleUrlsItem, ModuleUrlsRelativeContext, ModuleUrlsAbsoluteContext, ModuleUrls */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsRootUrl", function() { return ModuleUrlsRootUrl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsItem", function() { return ModuleUrlsItem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsRelativeContext", function() { return ModuleUrlsRelativeContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrlsAbsoluteContext", function() { return ModuleUrlsAbsoluteContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModuleUrls", function() { return ModuleUrls; });
-//
-// Root url
-//
-var ModuleUrlsRootUrl = /** @class */ (function () {
-    function ModuleUrlsRootUrl(urlNoSlash) {
-        this._urlNoSlash = urlNoSlash;
-    }
-    Object.defineProperty(ModuleUrlsRootUrl.prototype, "urlWithSlash", {
-        get: function () {
-            return "/" + this._urlNoSlash;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ModuleUrlsRootUrl.prototype, "urlNoSlash", {
-        get: function () {
-            return this._urlNoSlash;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ModuleUrlsRootUrl.ctorParameters = function () { return [
-        { type: String }
-    ]; };
-    return ModuleUrlsRootUrl;
-}());
-
-//
-// Item
-//
-var ModuleUrlsItem = /** @class */ (function () {
-    function ModuleUrlsItem(moduleUrls, url) {
-        this._moduleUrls = moduleUrls;
-        this._url = url;
-    }
-    Object.defineProperty(ModuleUrlsItem.prototype, "url", {
-        get: function () {
-            var url;
-            if (this._moduleUrls.context instanceof ModuleUrlsRelativeContext) {
-                url = this._url;
-            }
-            else if (this._moduleUrls.context instanceof ModuleUrlsAbsoluteContext) {
-                var absoluteContext = this._moduleUrls.context;
-                url = "" + absoluteContext.rootUrl.urlWithSlash + this._url;
-            }
-            return url;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ModuleUrlsItem.ctorParameters = function () { return [
-        { type: ModuleUrls },
-        { type: String }
-    ]; };
-    return ModuleUrlsItem;
-}());
-
-//
-// Relative context
-//
-var ModuleUrlsRelativeContext = /** @class */ (function () {
-    function ModuleUrlsRelativeContext() {
-    }
-    return ModuleUrlsRelativeContext;
-}());
-
-//
-// Absolute context
-//
-var ModuleUrlsAbsoluteContext = /** @class */ (function () {
-    function ModuleUrlsAbsoluteContext(rootUrlNoSlash) {
-        this.rootUrl = new ModuleUrlsRootUrl(rootUrlNoSlash);
-    }
-    ModuleUrlsAbsoluteContext.ctorParameters = function () { return [
-        { type: String }
-    ]; };
-    return ModuleUrlsAbsoluteContext;
-}());
-
-//
-// Module urls
-//
-var ModuleUrls = /** @class */ (function () {
-    function ModuleUrls(context) {
-        this.context = context;
-    }
-    ModuleUrls.prototype.rootUrlWithSlash = function () {
-        return this.rootUrl(true);
-    };
-    ModuleUrls.prototype.rootUrlNoSlash = function () {
-        return this.rootUrl(false);
-    };
-    ModuleUrls.prototype.rootUrl = function (withSlash) {
-        var result = null;
-        if (this.context instanceof ModuleUrlsAbsoluteContext) {
-            var absoluteContext = this.context;
-            var rootUrl = absoluteContext.rootUrl;
-            result = withSlash ? rootUrl.urlWithSlash : rootUrl.urlNoSlash;
-        }
-        return result;
-    };
-    ModuleUrls.ctorParameters = function () { return [
-        { type: undefined }
-    ]; };
-    return ModuleUrls;
 }());
 
 
@@ -1309,7 +1218,7 @@ var SharedModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29tcG9uZW50cy9wbGVhc2UtaGVscC1tZS9wbGVhc2UtaGVscC1tZS5jb21wb25lbnQuc2NzcyJ9 */"
+module.exports = "@media (max-width: 500px) {\n  table.in-transfer-receiver-table {\n    display: block;\n  }\n  table.in-transfer-receiver-table tbody,\ntable.in-transfer-receiver-table tr,\ntable.in-transfer-receiver-table td {\n    display: block;\n  }\n  table.in-transfer-receiver-table td {\n    border: border;\n    border-top: none;\n  }\n  table.in-transfer-receiver-table td:first-child {\n    border-top: 1px solid #000;\n    border-bottom: none;\n  }\n  table.in-transfer-receiver-table td:first-child.in-receiver-info-title {\n    text-decoration: underline;\n  }\n}\n@media (max-width: 400px) {\n  table.in-transfer-receiver-table td {\n    font-size: 0.8em;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvUHJvamVjdHMvZmVhdHVyZXMtY3NzLXNpdGUvc3JjL2FwcC91c2VyL2NvbXBvbmVudHMvcGxlYXNlLWhlbHAtbWUvcGxlYXNlLWhlbHAtbWUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3VzZXIvY29tcG9uZW50cy9wbGVhc2UtaGVscC1tZS9wbGVhc2UtaGVscC1tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDRTtFQURGO0lBRUksY0FBQTtFQ0NGO0VEQ0U7OztJQUdFLGNBQUE7RUNDSjtFRElFO0lBQ0UsY0FBQTtJQUNBLGdCQUFBO0VDRko7RURJSTtJQUNFLDBCQVBLO0lBUUwsbUJBQUE7RUNGTjtFRElNO0lBQ0UsMEJBQUE7RUNGUjtBQUNGO0FET0U7RUFDRTtJQUNFLGdCQUFBO0VDTEo7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvY29tcG9uZW50cy9wbGVhc2UtaGVscC1tZS9wbGVhc2UtaGVscC1tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlLmluLXRyYW5zZmVyLXJlY2VpdmVyLXRhYmxlIHtcbiAgQG1lZGlhIChtYXgtd2lkdGg6IDUwMHB4KSB7XG4gICAgZGlzcGxheTogYmxvY2s7XG5cbiAgICB0Ym9keSxcbiAgICB0cixcbiAgICB0ZCB7XG4gICAgICBkaXNwbGF5OiBibG9jaztcbiAgICB9XG5cbiAgICAkYm9yZGVyOiAxcHggc29saWQgIzAwMDtcblxuICAgIHRkIHtcbiAgICAgIGJvcmRlcjogYm9yZGVyO1xuICAgICAgYm9yZGVyLXRvcDogbm9uZTtcblxuICAgICAgJjpmaXJzdC1jaGlsZCB7XG4gICAgICAgIGJvcmRlci10b3A6ICRib3JkZXI7XG4gICAgICAgIGJvcmRlci1ib3R0b206IG5vbmU7XG5cbiAgICAgICAgJi5pbi1yZWNlaXZlci1pbmZvLXRpdGxlIHtcbiAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gIEBtZWRpYSAobWF4LXdpZHRoOiA0MDBweCkge1xuICAgIHRkIHtcbiAgICAgIGZvbnQtc2l6ZTogMC44ZW07XG4gICAgfVxuICB9XG59IiwiQG1lZGlhIChtYXgtd2lkdGg6IDUwMHB4KSB7XG4gIHRhYmxlLmluLXRyYW5zZmVyLXJlY2VpdmVyLXRhYmxlIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgfVxuICB0YWJsZS5pbi10cmFuc2Zlci1yZWNlaXZlci10YWJsZSB0Ym9keSxcbnRhYmxlLmluLXRyYW5zZmVyLXJlY2VpdmVyLXRhYmxlIHRyLFxudGFibGUuaW4tdHJhbnNmZXItcmVjZWl2ZXItdGFibGUgdGQge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICB9XG4gIHRhYmxlLmluLXRyYW5zZmVyLXJlY2VpdmVyLXRhYmxlIHRkIHtcbiAgICBib3JkZXI6IGJvcmRlcjtcbiAgICBib3JkZXItdG9wOiBub25lO1xuICB9XG4gIHRhYmxlLmluLXRyYW5zZmVyLXJlY2VpdmVyLXRhYmxlIHRkOmZpcnN0LWNoaWxkIHtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgIzAwMDtcbiAgICBib3JkZXItYm90dG9tOiBub25lO1xuICB9XG4gIHRhYmxlLmluLXRyYW5zZmVyLXJlY2VpdmVyLXRhYmxlIHRkOmZpcnN0LWNoaWxkLmluLXJlY2VpdmVyLWluZm8tdGl0bGUge1xuICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICB9XG59XG5AbWVkaWEgKG1heC13aWR0aDogNDAwcHgpIHtcbiAgdGFibGUuaW4tdHJhbnNmZXItcmVjZWl2ZXItdGFibGUgdGQge1xuICAgIGZvbnQtc2l6ZTogMC44ZW07XG4gIH1cbn0iXX0= */"
 
 /***/ }),
 
@@ -1370,12 +1279,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _snippets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../snippets */ "./src/app/user/snippets/index.ts");
+/* harmony import */ var _user_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../user-routing.module */ "./src/app/user/user-routing.module.ts");
+
 
 
 
 var AboutFeaturesCssContainerComponent = /** @class */ (function () {
     function AboutFeaturesCssContainerComponent() {
         this.snippets = _snippets__WEBPACK_IMPORTED_MODULE_2__["snippets"];
+        this.userRelativeUrls = _user_routing_module__WEBPACK_IMPORTED_MODULE_3__["userRelativeUrls"];
     }
     AboutFeaturesCssContainerComponent.prototype.ngOnInit = function () {
     };
@@ -1645,12 +1557,12 @@ var templateObject_1;
 /*!*********************************************!*\
   !*** ./src/app/user/user-routing.module.ts ***!
   \*********************************************/
-/*! exports provided: UserModuleUrls, UserRoutingModule */
+/*! exports provided: userRelativeUrls, UserRoutingModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModuleUrls", function() { return UserModuleUrls; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userRelativeUrls", function() { return userRelativeUrls; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRoutingModule", function() { return UserRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
@@ -1659,8 +1571,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_features_css_team_container_features_css_team_container_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./containers/features-css-team-container/features-css-team-container.component */ "./src/app/user/containers/features-css-team-container/features-css-team-container.component.ts");
 /* harmony import */ var _containers_about_save_project_container_about_save_project_container_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/about-save-project-container/about-save-project-container.component */ "./src/app/user/containers/about-save-project-container/about-save-project-container.component.ts");
 /* harmony import */ var _containers_save_team_container_save_team_container_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./containers/save-team-container/save-team-container.component */ "./src/app/user/containers/save-team-container/save-team-container.component.ts");
-/* harmony import */ var _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/logic/module-urls */ "./src/app/shared/logic/module-urls.ts");
-
 
 
 
@@ -1669,48 +1579,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //
-// Urls class
+// Urls
 //
-var UserModuleUrls = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](UserModuleUrls, _super);
-    function UserModuleUrls() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.aboutFeaturesCss = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'about-features-css');
-        _this.featuresCssTeam = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'features-css-team');
-        _this.aboutSaveProject = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'about-save-project');
-        _this.saveTeam = new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsItem"](_this, 'save-team');
-        return _this;
-    }
-    return UserModuleUrls;
-}(_shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrls"]));
-
-//
-// Relative urls
-//
-var relativeUrls = new UserModuleUrls(new _shared_logic_module_urls__WEBPACK_IMPORTED_MODULE_7__["ModuleUrlsRelativeContext"]());
+var userRelativeUrls = {
+    aboutFeaturesCss: 'about-features-css',
+    featuresCssTeam: 'features-css-team',
+    aboutSaveProject: 'about-save-project',
+    saveTeam: 'save-team',
+};
 //
 // Routes
 //
 var routes = [
     {
-        path: relativeUrls.aboutFeaturesCss.url,
+        path: '',
         component: _containers_about_features_css_container_about_features_css_container_component__WEBPACK_IMPORTED_MODULE_3__["AboutFeaturesCssContainerComponent"],
     },
     {
-        path: relativeUrls.featuresCssTeam.url,
+        path: userRelativeUrls.aboutFeaturesCss,
+        component: _containers_about_features_css_container_about_features_css_container_component__WEBPACK_IMPORTED_MODULE_3__["AboutFeaturesCssContainerComponent"],
+    },
+    {
+        path: userRelativeUrls.featuresCssTeam,
         component: _containers_features_css_team_container_features_css_team_container_component__WEBPACK_IMPORTED_MODULE_4__["FeaturesCssTeamContainerComponent"],
     },
     {
-        path: relativeUrls.aboutSaveProject.url,
+        path: userRelativeUrls.aboutSaveProject,
         component: _containers_about_save_project_container_about_save_project_container_component__WEBPACK_IMPORTED_MODULE_5__["AboutSaveProjectContainerComponent"],
     },
     {
-        path: relativeUrls.saveTeam.url,
+        path: userRelativeUrls.saveTeam,
         component: _containers_save_team_container_save_team_container_component__WEBPACK_IMPORTED_MODULE_6__["SaveTeamContainerComponent"],
     },
     {
         path: '**',
-        redirectTo: relativeUrls.aboutFeaturesCss.url,
+        redirectTo: '',
     },
 ];
 //
@@ -1791,6 +1694,25 @@ var UserModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/environments/environment-shared.ts":
+/*!************************************************!*\
+  !*** ./src/environments/environment-shared.ts ***!
+  \************************************************/
+/*! exports provided: environmentShared */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environmentShared", function() { return environmentShared; });
+var appUrlNoEndsWithSlash = 'http://130.211.221.3:8080';
+var environmentShared = {
+    appUrlNoEndsWithSlash: appUrlNoEndsWithSlash,
+    appUrl: appUrlNoEndsWithSlash + "/",
+};
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1801,11 +1723,18 @@ var UserModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/* harmony import */ var _environment_shared__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./environment-shared */ "./src/environments/environment-shared.ts");
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+
 var environment = {
-    production: false
+    production: false,
+    //
+    // Shared
+    //
+    appUrlNoEndsWithSlash: _environment_shared__WEBPACK_IMPORTED_MODULE_0__["environmentShared"].appUrlNoEndsWithSlash,
+    appUrl: _environment_shared__WEBPACK_IMPORTED_MODULE_0__["environmentShared"].appUrl,
 };
 /*
  * For easier debugging in development mode, you can import the following file
